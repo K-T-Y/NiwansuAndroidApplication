@@ -60,23 +60,24 @@ public class AdapterPatientAppointments extends RecyclerView.Adapter <AdapterPat
 
                 holder.btn_reject.setVisibility(View.INVISIBLE);
                 holder.btn_accept.setVisibility(View.INVISIBLE);
+
             }
             else if(appointments.get(position).getDoctorapprovalstatus().equals("Rejected"))
              {
-                holder.btn_reject.setVisibility(View.INVISIBLE);
-                holder.btn_accept.setVisibility(View.INVISIBLE);
-                holder.btn_video.setVisibility(View.INVISIBLE);
+                holder.btn_reject.setVisibility(View.GONE);
+                holder.btn_accept.setVisibility(View.GONE);
+                holder.btn_video.setVisibility(View.GONE);
              }
             else
             {
 
-                holder.btn_video.setVisibility(View.INVISIBLE);
+                holder.btn_video.setVisibility(View.GONE);
             }
         }
         else {
-            holder.btn_video.setVisibility(View.INVISIBLE);
-            holder.btn_reject.setVisibility(View.INVISIBLE);
-            holder.btn_accept.setVisibility(View.INVISIBLE);
+            holder.btn_video.setVisibility(View.GONE);
+            holder.btn_reject.setVisibility(View.GONE);
+            holder.btn_accept.setVisibility(View.GONE);
         }
 
 holder.btn_accept.setOnClickListener(new View.OnClickListener() {
