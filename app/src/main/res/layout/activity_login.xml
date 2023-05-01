@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.patient.activities.ResetPasswordActivity">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cL1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteY="130dp"
+
+                >
+
+
+                <ImageView
+                    android:id="@+id/back"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:contentDescription="TODO"
+                    android:src="@drawable/icon_back"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:layout_below="@+id/cL1"
+               android:orientation="vertical">
+
+
+               <TextView
+                   android:id="@+id/txt1"
+                   android:layout_marginTop="40dp"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="@string/enter_your_login_details"
+                   android:gravity="center"
+                   android:textStyle="bold"
+                   android:textSize="20sp"
+                   android:textColor="@color/GreenText"
+                   />
+    <RelativeLayout
+        android:id="@+id/rL1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        >
+               <com.google.android.material.textfield.TextInputLayout
+                   android:id="@+id/txtEmail"
+                   style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginHorizontal="40dp"
+                   android:layout_marginVertical="120dp"
+                   android:hint="@string/email"
+                   app:boxStrokeWidth="2dp"
+                   app:boxCornerRadiusBottomEnd="15dp"
+                   app:boxCornerRadiusBottomStart="15dp"
+                   app:boxCornerRadiusTopStart="15dp"
+                   app:boxCornerRadiusTopEnd="15dp"
+                   android:layout_alignParentTop="true"
+                   >
+
+                   <com.google.android.material.textfield.TextInputEditText
+                       android:id="@+id/etEmail"
+                       android:textSize="14sp"
+                       android:inputType="textEmailAddress"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content" />
+
+               </com.google.android.material.textfield.TextInputLayout>
+               <com.google.android.material.textfield.TextInputLayout
+                   android:id="@+id/txtPassword"
+                   style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginHorizontal="40dp"
+                   android:layout_marginVertical="120dp"
+                   android:hint="@string/password"
+                   app:boxStrokeWidth="2dp"
+                   app:boxCornerRadiusBottomEnd="15dp"
+                   app:boxCornerRadiusBottomStart="15dp"
+                   app:boxCornerRadiusTopStart="15dp"
+                   app:boxCornerRadiusTopEnd="15dp"
+                   android:layout_alignTop="@+id/txtEmail"
+                   >
+
+                   <com.google.android.material.textfield.TextInputEditText
+                       android:id="@+id/etPassword"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:textSize="14sp"
+                       android:inputType="textPassword"
+                       />
+
+               </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/login"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_marginVertical="50dp"
+                    android:layout_alignParentBottom="true"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/round_button_green"
+                    />
+    </RelativeLayout>
+
+
+           </LinearLayout>
+
+
+
+
+        </RelativeLayout>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

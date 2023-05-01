@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Niwansu-Android-Application</string>
+    <string name="AppName">NIWANSU</string>
+    <string name="Doctor1Name">Dr.Vihara Pathirage</string>
+    <string name="Doctor2Name">Dr.Mahesh Pathirana</string>
+    <string name="Doctor3Name">Dr.Anjela Colonne</string>
+    <string name="Doctor4Name">Dr.Sachini Gallage</string>
+    <string name="Doctor5Name">Dr.Himasha Perera</string>
+    <string name="Doctor6Name">Dr.Lalani Gamage</string>
+    <string name="by_signing_up_you_accept_our">By signing up you accept our <font color='#01C6DB'>Privacy Policy, Terms and Licensing Agreement</font></string>
+    <string name="already_have_an_account">Already have an account? <font color='#01C6DB'>Login</font></string>
+    <string name="pick_a_profile_picture">Pick a Profile Picture</string>
+    <string name="patient_sign_up">PATIENT SIGN-UP</string>
+    <string name="enter_your_active_number">Enter your Active Number</string>
+    <string name="_94">+94</string>
+    <string name="profile_name">Profile Name</string>
+    <string name="first_name">First Name</string>
+    <string name="surename">Surename</string>
+    <string name="province">Province</string>
+    <string name="district">District</string>
+    <string name="city">City</string>
+    <string name="enter_your_login_details">ENTER YOUR LOGIN DETAILS</string>
+    <string name="email">EMAIL</string>
+    <string name="sign_up_with_email">Sign-Up with Email</string>
+    <string name="create_a_password">Create a Password</string>
+    <string name="re_type_password">Re-type Password</string>
+    <string name="sign_up_with_google">Sign-Up with Google</string>
+    <string name="sign_up">Sign-Up</string>
+    <string name="login">LOG-IN</string>
+    <string name="password">PASSWORD</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="re_enter_password">Re-Enter Password</string>
+    <string name="email2">Email</string>
+    <string name="upload_picture">UPLOAD PICTURE</string>
+    <string name="upload_profile_picture">UPLOAD PROFILE PICTURE</string>
+    <string name="sex">Sex</string>
+    <string name="occupation">Occupation</string>
+    <string name="select_profile_picture">Select Profile Picture</string>
+
+    <string-array name="postpartum_stagelist">
+        <item>Select your Postpartum Stage</item>
+        <item>First 2 Months</item>
+        <item>2 - 6 Months</item>
+        <item>After 6 Months</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
