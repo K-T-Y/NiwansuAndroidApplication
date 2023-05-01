@@ -61,6 +61,20 @@ public interface NetworkService {
             @Query("usercategory") String usercategory
 
     );
+    @GET("fetchappointmentdetailsondateDoc.php")
+    Call<List<AppointmentsList>> getAppointmentsondateDoc(
+
+            @Query("name") String name,
+            @Query("bookeddate") String date
+
+    );
+
+    @GET("fetchappointmentdetailsDoc.php")
+    Call<List<AppointmentsList>> getAppointmentsDoctor(
+
+            @Query("name") String name
+
+    );
 
 //    @FormUrlEncoded
 //    @POST("login.php")
