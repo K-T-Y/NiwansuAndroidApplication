@@ -97,6 +97,32 @@
 
   </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:layout_marginTop="140dp"
+            android:layout_marginLeft="30dp"
+            android:id="@+id/btn_accept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Accept"/>
+        <Button
+            android:id="@+id/btn_reject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-50dp"
+            android:layout_marginLeft="190dp"
+            android:text="Reject"/>
+        <Button
+            android:id="@+id/btn_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-47dp"
+            android:layout_marginLeft="100dp"
+            android:text="Start Call"/>
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>
 

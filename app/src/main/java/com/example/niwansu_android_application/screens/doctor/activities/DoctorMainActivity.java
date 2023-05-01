@@ -34,7 +34,7 @@ public class DoctorMainActivity extends AppCompatActivity {
         HomeFragment homeFragment=new HomeFragment();
         FeedFragment feedFragment=new FeedFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
-      
+
         bottomNavigationView.setOnItemReselectedListener(new NavigationBarView.OnItemReselectedListener() {
             @Override
             public void onNavigationItemReselected(MenuItem item) {

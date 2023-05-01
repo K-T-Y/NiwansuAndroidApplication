@@ -1,6 +1,8 @@
 package com.example.niwansu_android_application.core;
 
 
+import com.example.niwansu_android_application.models.changeStatusModel;
+
 import java.util.HashMap;
 import java.util.List;
 
@@ -76,10 +78,11 @@ public interface NetworkService {
 
     );
 
-//    @FormUrlEncoded
-//    @POST("login.php")
-//    Call<LoginResponseModel> login(@Field("email") String email, @Field("password") String password);
-//
+
+    @FormUrlEncoded
+    @POST("updateStatus.php")
+    Call<changeStatusModel> changeStatus(@Field("req_id") int req_id, @Field("status") String status);
+
 //    @FormUrlEncoded
 //    @POST("profile.php")
 //    Call<SetupProfileResponseModel> profile(@FieldMap HashMap<String, String> params);
