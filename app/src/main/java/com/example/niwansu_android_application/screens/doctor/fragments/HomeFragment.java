@@ -6,6 +6,7 @@ import static com.example.niwansu_android_application.core.Constants.KEY_LAST_NA
 import static com.example.niwansu_android_application.core.Constants.KEY_PROFILE_PIC;
 import static com.example.niwansu_android_application.core.Constants.PREFERENCE_NAME;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -21,6 +22,7 @@ import android.widget.TextView;
 
 import com.example.niwansu_android_application.R;
 import com.example.niwansu_android_application.core.Constants;
+import com.example.niwansu_android_application.screens.doctor.activities.ProfileActivity;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -50,7 +52,14 @@ CircleImageView pro_pic;
             Bitmap decodedByte = BitmapFactory.decodeByteArray(imgdate, 0, imgdate.length);
             pro_pic.setImageBitmap(decodedByte);
         }
-
+        pro_pic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getActivity(), ProfileActivity.class);
+                intent.addFlags((Intent.FLAG_ACTIVITY_NEW_TASK));
+                startActivity(intent);
+            }
+        });
         return view;
     }
 }

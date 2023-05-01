@@ -4,6 +4,7 @@ import static android.content.Context.MODE_PRIVATE;
 import static com.example.niwansu_android_application.core.Constants.PREFERENCE_NAME;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.niwansu_android_application.R;
 import com.example.niwansu_android_application.models.changeStatusModel;
+import com.example.niwansu_android_application.screens.doctor.activities.DoctorMainActivity;
 
 
 import java.util.List;
@@ -92,6 +94,9 @@ holder.btn_accept.setOnClickListener(new View.OnClickListener() {
                 if(response.body().getStatus().equals("ok"))
                 {
                     Toast.makeText(context.getApplicationContext(),"Successfully Accepted",Toast.LENGTH_LONG).show();
+                    Intent intent=new Intent(context.getApplicationContext(), DoctorMainActivity.class);
+                    intent.addFlags((Intent.FLAG_ACTIVITY_NEW_TASK));
+                    context.startActivity(intent);
                 }
             }
 
@@ -115,6 +120,9 @@ holder.btn_accept.setOnClickListener(new View.OnClickListener() {
                         if(response.body().getStatus().equals("ok"))
                         {
                             Toast.makeText(context.getApplicationContext(),"Successfully Rejected",Toast.LENGTH_LONG).show();
+                            Intent intent=new Intent(context.getApplicationContext(), DoctorMainActivity.class);
+                            intent.addFlags((Intent.FLAG_ACTIVITY_NEW_TASK));
+                            context.startActivity(intent);
                         }
                     }
 
