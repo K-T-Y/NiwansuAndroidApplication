@@ -4,6 +4,7 @@ import static com.example.niwansu_android_application.core.Constants.PREFERENCE_
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -14,11 +15,12 @@ import android.widget.TextView;
 
 import com.example.niwansu_android_application.R;
 import com.example.niwansu_android_application.core.Constants;
+import com.example.niwansu_android_application.screens.patient.activities.UpdateProfileActivity;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileActivity extends AppCompatActivity {
-TextView txt_name,txt_spec,txt_phone,txt_email;
+TextView txt_name,txt_spec,txt_phone,txt_email,txt_update;
     SharedPreferences sharedPreferences;
     CircleImageView profile_pic;
     @Override
@@ -31,6 +33,16 @@ TextView txt_name,txt_spec,txt_phone,txt_email;
         txt_phone=findViewById(R.id.txt_phone);
         txt_email=findViewById(R.id.txt_email);
         profile_pic=findViewById(R.id.profile_pic);
+        txt_update=findViewById(R.id.txt_update);
+
+        txt_update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(), UpdateProfileActivity.class);
+                startActivity(intent);
+
+            }
+        });
         if(sharedPreferences.getString(Constants.KEY_PROFILE_PIC, null)!=null)
         {
             String base64 = sharedPreferences.getString(Constants.KEY_PROFILE_PIC, null);

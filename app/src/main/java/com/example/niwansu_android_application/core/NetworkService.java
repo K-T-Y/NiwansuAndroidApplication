@@ -81,7 +81,7 @@ public interface NetworkService {
 
     @FormUrlEncoded
     @POST("updateStatus.php")
-    Call<changeStatusModel> changeStatus(@Field("req_id") int req_id, @Field("status") String status);
+    Call<changeStatusModel> changeStatus(@Field("req_id") int req_id, @Field("status") String status,@Field("time") String time);
 
 //    @FormUrlEncoded
 //    @POST("profile.php")

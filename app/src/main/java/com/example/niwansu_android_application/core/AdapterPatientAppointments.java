@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -62,6 +63,7 @@ public class AdapterPatientAppointments extends RecyclerView.Adapter <AdapterPat
 
                 holder.btn_reject.setVisibility(View.INVISIBLE);
                 holder.btn_accept.setVisibility(View.INVISIBLE);
+                holder.spin_time.setVisibility(View.INVISIBLE);
 
             }
             else if(appointments.get(position).getDoctorapprovalstatus().equals("Rejected"))
@@ -69,25 +71,29 @@ public class AdapterPatientAppointments extends RecyclerView.Adapter <AdapterPat
                 holder.btn_reject.setVisibility(View.GONE);
                 holder.btn_accept.setVisibility(View.GONE);
                 holder.btn_video.setVisibility(View.GONE);
+                 holder.spin_time.setVisibility(View.INVISIBLE);
              }
             else
             {
 
                 holder.btn_video.setVisibility(View.GONE);
+                holder.time.setVisibility(View.INVISIBLE);
             }
         }
         else {
             holder.btn_video.setVisibility(View.GONE);
             holder.btn_reject.setVisibility(View.GONE);
             holder.btn_accept.setVisibility(View.GONE);
+            holder.spin_time.setVisibility(View.INVISIBLE);
         }
 
 holder.btn_accept.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
+        String timeslot=holder.spin_time.getSelectedItem().toString();
         NetworkService apiInterface;
         apiInterface = NetworkClient.getClient().create(NetworkService.class);
-        Call<changeStatusModel> call = apiInterface.changeStatus(appointments.get(position).getId(),"Accepted");
+        Call<changeStatusModel> call = apiInterface.changeStatus(appointments.get(position).getId(),"Accepted",timeslot);
         call.enqueue(new Callback<changeStatusModel>() {
             @Override
             public void onResponse(Call<changeStatusModel> call, Response<changeStatusModel> response) {
@@ -113,7 +119,7 @@ holder.btn_accept.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 NetworkService apiInterface;
                 apiInterface = NetworkClient.getClient().create(NetworkService.class);
-                Call<changeStatusModel> call = apiInterface.changeStatus(appointments.get(position).getId(),"Rejected");
+                Call<changeStatusModel> call = apiInterface.changeStatus(appointments.get(position).getId(),"Rejected","");
                 call.enqueue(new Callback<changeStatusModel>() {
                     @Override
                     public void onResponse(Call<changeStatusModel> call, Response<changeStatusModel> response) {
@@ -142,6 +148,7 @@ holder.btn_accept.setOnClickListener(new View.OnClickListener() {
     public class MyViewHolder extends RecyclerView.ViewHolder{
         TextView appointmentNo,Date,doctor,time,status;
         Button btn_video,btn_accept,btn_reject;
+        Spinner spin_time;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             appointmentNo = itemView.findViewById(R.id.appointmentNo);
@@ -149,11 +156,10 @@ holder.btn_accept.setOnClickListener(new View.OnClickListener() {
             doctor = itemView.findViewById(R.id.doctor);
             time = itemView.findViewById(R.id.time);
             status = itemView.findViewById(R.id.status);
-
+            spin_time=itemView.findViewById(R.id.spin_time);
             btn_accept=itemView.findViewById(R.id.btn_accept);
             btn_reject=itemView.findViewById(R.id.btn_reject);
             btn_video=itemView.findViewById(R.id.btn_video);
-
 
 
         }
