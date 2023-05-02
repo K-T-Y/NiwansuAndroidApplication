@@ -186,8 +186,16 @@ public class DiabetesCheckActivity extends AppCompatActivity implements View.OnC
     }
 
     void finishQuiz() {
+        if (score < 10) {
+            questionTextView.setText("Your Score is " + score);
+        }else if (score <=20)
+        {
+            questionTextView.setText("Your Score is " + score+ " You have a slight chance of having Diabetes");
+        } else if (score<=30) {
+            questionTextView.setText("Your Score is " + score+ " You have a over 75% chance of having diabetes.\n Make sure to channel one of our doctors as soon as possible");
+        }
 
-        questionTextView.setText("Test completed.");
+
         ansA.setVisibility(View.INVISIBLE);
         ansB.setVisibility(View.INVISIBLE);
         ansC.setVisibility(View.INVISIBLE);

@@ -745,7 +745,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_margin="12dp"
                                     app:cardCornerRadius="12dp"
-                                    app:cardElevation="20dp"
+                                    app:cardElevation="6dp"
 
                                     >
 
@@ -761,7 +761,7 @@
                                         <ImageView
                                             android:layout_width="35dp"
                                             android:layout_height="30dp"
-                                            android:background="@drawable/eyes_menu_icon" />
+                                            android:background="@drawable/icon_diabetes" />
 
                                         <TextView
                                             android:layout_width="65dp"
@@ -785,7 +785,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_margin="12dp"
                                     app:cardCornerRadius="12dp"
-                                    app:cardElevation="20dp"
+                                    app:cardElevation="5dp"
 
                                     >
 
@@ -801,7 +801,7 @@
                                         <ImageView
                                             android:layout_width="35dp"
                                             android:layout_height="30dp"
-                                            android:background="@drawable/tooth_menu_icon" />
+                                            android:background="@drawable/icon_heart_disease" />
 
 
                                         <TextView
@@ -823,7 +823,7 @@
 
                                     android:layout_margin="12dp"
                                     app:cardCornerRadius="12dp"
-                                    app:cardElevation="20dp"
+                                    app:cardElevation="5dp"
 
                                     >
 
@@ -839,7 +839,7 @@
                                         <ImageView
                                             android:layout_width="35dp"
                                             android:layout_height="30dp"
-                                            android:background="@drawable/eyes_menu_icon" />
+                                            android:background="@drawable/icon_kidney" />
 
 
                                         <TextView
@@ -861,7 +861,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_margin="12dp"
                                     app:cardCornerRadius="12dp"
-                                    app:cardElevation="20dp"
+                                    app:cardElevation="5dp"
 
                                     >
 
@@ -880,7 +880,7 @@
                                             <ImageView
                                                 android:layout_width="35dp"
                                                 android:layout_height="30dp"
-                                                android:background="@drawable/eyes_menu_icon" />
+                                                android:background="@drawable/icon_chronic_disease" />
 
 
 
@@ -903,45 +903,13 @@
                                     app:cardCornerRadius="12dp"
                                     app:cardElevation="20dp"
 
-                                    >
-
-                                    <LinearLayout
-
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:gravity="center"
-                                        android:orientation="vertical"
-                                        android:padding="8dp">
-
-
-
-
-
-                                            <ImageView
-                                                android:layout_width="35dp"
-                                                android:layout_height="30dp"
-                                                android:background="@drawable/eyes_menu_icon" />
-
-
-
-                                        <TextView
-                                            android:layout_width="65dp"
-                                            android:layout_height="30dp"
-
-                                            android:gravity="center"
-                                            android:text="Optical"
-                                            android:textStyle="bold"
-
-                                            />
-                                    </LinearLayout>
-
-                                </androidx.cardview.widget.CardView>
+                                    />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_gravity="center_vertical"
-                                    android:text="See More Specializations..."
+                                    android:text="See More Quick check-ups"
                                     android:textSize="16sp"
                                     android:textStyle="bold"
 

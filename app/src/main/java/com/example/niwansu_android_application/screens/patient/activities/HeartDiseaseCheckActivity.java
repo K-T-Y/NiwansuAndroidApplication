@@ -186,13 +186,15 @@ public class HeartDiseaseCheckActivity extends AppCompatActivity implements View
     }
 
     void finishQuiz() {
-
         if (score < 10) {
             questionTextView.setText("Your Score is " + score);
         }else if (score <=20)
         {
             questionTextView.setText("Your Score is " + score+ " You have a slight chance of having Heart disease");
+        } else if (score<=30) {
+            questionTextView.setText("Your Score is " + score+ " You have a over 75% chance of having Heart disease.\n Make sure to channel one of our doctors as soon as possible");
         }
+
         ansA.setVisibility(View.INVISIBLE);
         ansB.setVisibility(View.INVISIBLE);
         ansC.setVisibility(View.INVISIBLE);

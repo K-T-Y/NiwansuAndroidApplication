@@ -184,6 +184,11 @@ public class KidneyDiseaseCheckActivity extends AppCompatActivity implements Vie
         ansC.setText(QuizKidneyDiseaseClass.choices[currentQuestionIndex][2]);
         ansD.setText(QuizKidneyDiseaseClass.choices[currentQuestionIndex][3]);
 
+        ansA.setChecked(false);
+        ansB.setChecked(false);
+        ansC.setChecked(false);
+        ansD.setChecked(false);
+
     }
 
     void finishQuiz() {
@@ -192,8 +197,11 @@ public class KidneyDiseaseCheckActivity extends AppCompatActivity implements Vie
             questionTextView.setText("Your Score is " + score);
         }else if (score <=20)
         {
-            questionTextView.setText("Your Score is " + score+ " You have a slight chance of having Heart disease");
+            questionTextView.setText("Your Score is " + score+ " You have a slight chance of having kidney disease");
+        } else if (score<=30) {
+            questionTextView.setText("Your Score is " + score+ " You have a over 75% chance of having kidney disease.\n Make sure to channel one of our doctors as soon as possible");
         }
+
         ansA.setVisibility(View.INVISIBLE);
         ansB.setVisibility(View.INVISIBLE);
         ansC.setVisibility(View.INVISIBLE);
