@@ -25,6 +25,10 @@ import androidx.fragment.app.Fragment;
 import com.example.niwansu_android_application.R;
 
 import com.example.niwansu_android_application.screens.patient.activities.BookDoctorActivity;
+import com.example.niwansu_android_application.screens.patient.activities.ChronicRespitoryDiseaseCheckActivity;
+import com.example.niwansu_android_application.screens.patient.activities.DiabetesCheckActivity;
+import com.example.niwansu_android_application.screens.patient.activities.HeartDiseaseCheckActivity;
+import com.example.niwansu_android_application.screens.patient.activities.KidneyDiseaseCheckActivity;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -33,7 +37,7 @@ public class HomeFragment extends Fragment {
     SharedPreferences sharedPreferences;
     CircleImageView pro_pic;
 
-    CardView doctor1,doctor2,doctor3,doctor4,doctor5,doctor6;
+    CardView doctor1, doctor2, doctor3, doctor4, doctor5, doctor6, crdDiabetes,crdHeartDisease,crdKidney,crdChronic;
 
 
     TextView txtName;
@@ -52,7 +56,10 @@ public class HomeFragment extends Fragment {
         doctor5 = view.findViewById(R.id.Doctor5);
         doctor6 = view.findViewById(R.id.Doctor6);
 
-
+        crdDiabetes = view.findViewById(R.id.crdDiabetes);
+        crdHeartDisease = view.findViewById(R.id.crdHeartDisease);
+        crdKidney = view.findViewById(R.id.crdKidneyDisease);
+        crdChronic = view.findViewById(R.id.crdChronicRespitoryDisease);
 
 
         //  txtName = view.findViewById(R.id.txtName);
@@ -111,27 +118,44 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
+        crdDiabetes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), DiabetesCheckActivity.class);
 
+                startActivity(intent);
+            }
+        });
+        crdHeartDisease .setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), HeartDiseaseCheckActivity.class);
 
+                startActivity(intent);
+            }
+        });
+        crdKidney.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), KidneyDiseaseCheckActivity.class);
 
+                startActivity(intent);
+            }
+        });
+        crdChronic .setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), ChronicRespitoryDiseaseCheckActivity.class);
 
-
+                startActivity(intent);
+            }
+        });
 
 
         return view;
     }
+
     public void onViewCreated(View view, Bundle savedInstanceState) {
-
-
-
-
-
-
-
-
-
-
-
 
 
 //get User Details - First and last name
@@ -146,10 +170,9 @@ public class HomeFragment extends Fragment {
         Bitmap decodedByte = BitmapFactory.decodeByteArray(imgdate, 0, imgdate.length);
 
 
-
         pro_pic.setImageBitmap(decodedByte);
 
-       // txtName.setText(firstname+" "+lastname);
+        // txtName.setText(firstname+" "+lastname);
 
 
     }

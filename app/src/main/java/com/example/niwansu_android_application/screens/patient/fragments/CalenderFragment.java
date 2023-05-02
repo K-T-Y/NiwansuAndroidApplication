@@ -39,7 +39,7 @@ public class CalenderFragment extends Fragment {
     SharedPreferences sharedPreferences;
     private List<AppointmentsList> appointments;
 
-    TextView txtSeeAll;
+    TextView txtSeeAll,txtAccepted,txtDeclined,txtPending;
     CalendarView calendarView;
     private RecyclerView.LayoutManager layoutManager;
     private NetworkService apiInterface;
@@ -63,13 +63,14 @@ public class CalenderFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_calender, container, false);
         recyclerView = view.findViewById(R.id.recyclerView);
+        txtAccepted = view.findViewById(R.id.txtAccepted);
+        txtDeclined = view.findViewById(R.id.txtDeclined);
+        txtPending = view.findViewById(R.id.txtPending);
         layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
         txtSeeAll = view.findViewById(R.id.txtseeAll);
         recyclerView.setHasFixedSize(true);
         calendarView = view.findViewById(R.id.calender);
-
-
         fetchNotification();
 
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
@@ -90,6 +91,30 @@ public class CalenderFragment extends Fragment {
                 fetchNotification();
             }
         });
+        txtAccepted.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // txtSeeAll.setBackground(Drawa);
+                fetchAccepted();
+            }
+        });
+        txtDeclined.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // txtSeeAll.setBackground(Drawa);
+                fetchDeclined();
+            }
+        });
+        txtPending.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // txtSeeAll.setBackground(Drawa);
+                fetchPending();
+            }
+        });
+
+
+
         return view;
 
     }
@@ -134,6 +159,79 @@ public class CalenderFragment extends Fragment {
         apiInterface = NetworkClient.getClient().create(NetworkService.class);
 
         Call<List<AppointmentsList>> call = apiInterface.getAppointmentsondate(patientemail,date);
+        call.enqueue(new Callback<List<AppointmentsList>>() {
+            @Override
+            public void onResponse(Call<List<AppointmentsList>> call, Response<List<AppointmentsList>> response) {
+                appointments = response.body();
+                adapterNotification = new AdapterPatientAppointments(appointments, getContext());
+                recyclerView.setAdapter(adapterNotification);
+                adapterNotification.notifyDataSetChanged();
+                //Toast.makeText(getContext(), "asdas" , Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(Call<List<AppointmentsList>> call, Throwable t)
+            {
+                Toast.makeText(getContext(), "Error\n"+t.toString(), Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    public void fetchAccepted(){
+        sharedPreferences =this.getActivity().getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
+        String patientemail = sharedPreferences.getString(KEY_EMAIL,null);
+
+        apiInterface = NetworkClient.getClient().create(NetworkService.class);
+
+        Call<List<AppointmentsList>> call = apiInterface.getfetchAccepted(patientemail);
+        call.enqueue(new Callback<List<AppointmentsList>>() {
+            @Override
+            public void onResponse(Call<List<AppointmentsList>> call, Response<List<AppointmentsList>> response) {
+                appointments = response.body();
+                adapterNotification = new AdapterPatientAppointments(appointments, getContext());
+                recyclerView.setAdapter(adapterNotification);
+                adapterNotification.notifyDataSetChanged();
+                //Toast.makeText(getContext(), "asdas" , Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(Call<List<AppointmentsList>> call, Throwable t)
+            {
+                Toast.makeText(getContext(), "Error\n"+t.toString(), Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+    public void fetchDeclined(){
+        sharedPreferences =this.getActivity().getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
+        String patientemail = sharedPreferences.getString(KEY_EMAIL,null);
+
+        apiInterface = NetworkClient.getClient().create(NetworkService.class);
+
+        Call<List<AppointmentsList>> call = apiInterface.getfetchDeclined(patientemail);
+        call.enqueue(new Callback<List<AppointmentsList>>() {
+            @Override
+            public void onResponse(Call<List<AppointmentsList>> call, Response<List<AppointmentsList>> response) {
+                appointments = response.body();
+                adapterNotification = new AdapterPatientAppointments(appointments, getContext());
+                recyclerView.setAdapter(adapterNotification);
+                adapterNotification.notifyDataSetChanged();
+                //Toast.makeText(getContext(), "asdas" , Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(Call<List<AppointmentsList>> call, Throwable t)
+            {
+                Toast.makeText(getContext(), "Error\n"+t.toString(), Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+    public void fetchPending(){
+        sharedPreferences =this.getActivity().getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
+        String patientemail = sharedPreferences.getString(KEY_EMAIL,null);
+
+        apiInterface = NetworkClient.getClient().create(NetworkService.class);
+
+        Call<List<AppointmentsList>> call = apiInterface.getfetchPending(patientemail);
         call.enqueue(new Callback<List<AppointmentsList>>() {
             @Override
             public void onResponse(Call<List<AppointmentsList>> call, Response<List<AppointmentsList>> response) {

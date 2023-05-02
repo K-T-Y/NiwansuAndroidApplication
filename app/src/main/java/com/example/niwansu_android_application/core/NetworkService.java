@@ -76,6 +76,31 @@ public interface NetworkService {
 
     );
 
+
+    @GET("fetchAppointmentsAccepted.php")
+    Call<List<AppointmentsList>> getfetchAccepted(
+
+            @Query("patientemail") String patientemail
+
+    );
+
+
+
+    @GET("fetchAppointmentsDeclined.php")
+    Call<List<AppointmentsList>> getfetchDeclined(
+
+            @Query("patientemail") String patientemail
+
+    );
+
+
+    @GET("fetchAppointmentsPending.php")
+    Call<List<AppointmentsList>> getfetchPending(
+
+            @Query("patientemail") String patientemail
+
+    );
+
 //    @FormUrlEncoded
 //    @POST("login.php")
 //    Call<LoginResponseModel> login(@Field("email") String email, @Field("password") String password);
