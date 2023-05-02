@@ -57,6 +57,8 @@ public interface NetworkService {
 
     );
 
+    @GET("getUsers.php")
+    Call<List<Users>> getUsers();
     @GET("getPatientsList.php")
     Call<List<Users>> getPatientsList(
 
