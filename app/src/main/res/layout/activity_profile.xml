@@ -1,9 +1,282 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="12dp"
+
     tools:context=".screens.doctor.activities.ProfileActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/lL3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/cL1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/profile_pic"
+            android:padding="20dp">
+
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:contentDescription="TODO"
+                android:src="@drawable/icon_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_pic"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/person_1" />
+
+            <TextView
+                android:id="@+id/txt_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/profile_pic"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:text="Dr Name"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_name"
+                android:layout_centerHorizontal="true"
+                android:text="Dr Name"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/txt_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_phone"
+                android:layout_centerHorizontal="true"
+                android:text="Dr Name"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16dp" />
+
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            app:contentPadding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Dr. Sanath is a member of a limited group of board certified ophthalmologists with an additional subspecialty training in Oculofacial Plastic and Reconstructive Surgery, also known as Oculoplastic Surgery." />
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lL3">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingVertical="10dp"
+            >
+
+            <androidx.cardview.widget.CardView
+
+                android:id="@+id/crd1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/purple_500"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="5dp"
+                app:contentPadding="12dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="My Patient List"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="Update Record"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/crd2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/crd1"
+                android:layout_marginTop="15dp"
+                app:cardBackgroundColor="@color/purple_500"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="5dp"
+                app:contentPadding="12dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="Edit Profile"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txt_update"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="Update "
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/crd3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/crd2"
+                android:layout_marginTop="15dp"
+                app:cardBackgroundColor="@color/purple_500"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="5dp"
+                app:contentPadding="12dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="Notification"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/black"
+                        android:layout_centerVertical="true"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/crd4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/crd3"
+                android:layout_marginTop="15dp"
+                app:cardBackgroundColor="@color/purple_500"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="5dp"
+                app:contentPadding="12dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Alarm"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/crd5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/crd4"
+                android:layout_marginTop="15dp"
+                app:cardBackgroundColor="@color/purple_500"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="5dp"
+                app:contentPadding="12dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Logout"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

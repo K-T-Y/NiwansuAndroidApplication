@@ -42,56 +42,54 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="10dp"
                         android:layout_marginTop="10dp">
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="match_parent"
+
+                        <TextView
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:cardCornerRadius="12dp"
-                            app:cardElevation="12dp">
+                            android:text="NIWANSU"
+                            android:layout_centerVertical="true"
+                            android:textColor="#4F7C7E"
+                            android:textSize="20sp"
+                            android:textStyle="bold">
 
-                            <RelativeLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                        </TextView>
 
-                                <TextView
-                                    android:id="@+id/Loggedinuser"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="44dp"
-                                    android:layout_centerVertical="true"
-                                    android:layout_marginStart="0dp"
-                                    android:text="Good Morning ,"
-                                    android:textColor="#4F7C7E"
-                                    android:textSize="20sp"
-                                    android:textStyle="bold">
+                        <TextView
+                            android:id="@+id/subLine"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginTop="30dp"
+                            android:text="Pure Wellness for Sri Lanka"
+                            android:textColor="#4C7375"
+                            android:textSize="14sp"
+                            android:textStyle="normal">
 
-                                </TextView>
+                        </TextView>
 
-                                <TextView
-                                    android:id="@+id/txt_name"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignParentBottom="true"
-                                    android:layout_marginTop="30dp"
-                                    android:text="DR Sanath Nishantha"
-                                    android:textColor="#4F7C7E"
-                                    android:textSize="20sp"
-                                    android:textStyle="bold">
-
-                                </TextView>
-
-                                <de.hdodenhof.circleimageview.CircleImageView
-                                    android:id="@+id/pro_pic"
-                                    android:layout_width="100dp"
-                                    android:layout_height="100dp"
-                                    android:layout_alignParentRight="true"
-                                    android:paddingRight="10dp">
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/pro_pic"
+                            android:layout_width="62dp"
+                            android:layout_height="62dp"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/icon_upload_pro_pic"
+                            android:paddingRight="10dp">
 
 
-                                </de.hdodenhof.circleimageview.CircleImageView>
-                            </RelativeLayout>
-                        </androidx.cardview.widget.CardView>
+                        </de.hdodenhof.circleimageview.CircleImageView>
+                        <TextView
 
-
-
+                            android:id="@+id/txt_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/pro_pic"
+                            android:gravity="right"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginStart="0dp"
+                            android:text="NIWANSU"
+                            android:textColor="#4F7C7E"
+                            android:textSize="16sp"
+                            android:textStyle="bold"/>
 
                     </RelativeLayout>
 
@@ -113,10 +111,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="10dp"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginVertical="15dp"
                         android:fontFamily="serif"
                         android:gravity="left"
-                        android:text="Upcoming SAppointments"
+                        android:text="Upcoming Appointments"
                         android:textColor="#4C7375"
                         android:textSize="18sp"
                         android:textStyle="normal"
@@ -131,163 +129,17 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="20dp">
 
-
-                        <GridLayout
-                            android:layout_width="match_parent"
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/storyRV"
+                            android:layout_width="216dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="left"
-                            android:alignmentMode="alignMargins"
-                            android:columnCount="5"
-                            android:columnOrderPreserved="false"
-                            android:orientation="horizontal"
-                            android:rowCount="1"
+                            android:layout_marginLeft="-10dp"
+                            android:layout_weight="1">
 
-                            >
-
-
-                            <androidx.cardview.widget.CardView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="12dp"
-                                app:cardCornerRadius="12dp"
-
-
-                                >
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:gravity="center"
-                                    android:orientation="vertical">
-<de.hdodenhof.circleimageview.CircleImageView
-    android:layout_width="90dp"
-    android:layout_height="90dp"
-    android:src="@drawable/person_1"/>
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="John Wick"
-                                        android:textStyle="bold"/>
-
-
-                                </LinearLayout>
-                            </androidx.cardview.widget.CardView>
-
-                            <androidx.cardview.widget.CardView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="12dp"
-                                app:cardCornerRadius="12dp"
-                                >
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:gravity="center"
-                                    android:orientation="vertical">
-                                    <de.hdodenhof.circleimageview.CircleImageView
-                                        android:layout_width="90dp"
-                                        android:layout_height="90dp"
-                                        android:src="@drawable/person_2"/>
-
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Mellissa Croose"
-    android:textStyle="bold"/>
-
-                                </LinearLayout>
-                            </androidx.cardview.widget.CardView>
-
-                            <androidx.cardview.widget.CardView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="12dp"
-                                app:cardCornerRadius="12dp"
-
-
-                                >
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:gravity="center"
-                                    android:orientation="vertical">
-                                    <de.hdodenhof.circleimageview.CircleImageView
-                                        android:layout_width="90dp"
-                                        android:layout_height="90dp"
-                                        android:src="@drawable/person_3"/>
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="John Butller"
-                                        android:textStyle="bold"/>
-
-                                </LinearLayout>
-                            </androidx.cardview.widget.CardView>
-                            <androidx.cardview.widget.CardView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="12dp"
-                                app:cardCornerRadius="12dp"
-
-
-                                >
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:gravity="center"
-                                    android:orientation="vertical">
-                                    <de.hdodenhof.circleimageview.CircleImageView
-                                        android:layout_width="90dp"
-                                        android:layout_height="90dp"
-                                        android:src="@drawable/person_4"/>
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Anya Bhatt"
-                                        android:textStyle="bold"/>
-
-                                </LinearLayout>
-                            </androidx.cardview.widget.CardView>
-
-                            <androidx.cardview.widget.CardView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="12dp"
-                                app:cardCornerRadius="12dp"
-
-
-                                >
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:gravity="center"
-                                    android:orientation="vertical">
-                                    <de.hdodenhof.circleimageview.CircleImageView
-                                        android:layout_width="90dp"
-                                        android:layout_height="90dp"
-                                        android:src="@drawable/person_5"/>
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Maxx Well"
-                                        android:textStyle="bold"/>
-
-                                </LinearLayout>
-                            </androidx.cardview.widget.CardView>
-
-
-                        </GridLayout>
+                        </androidx.recyclerview.widget.RecyclerView>
 
 
                     </HorizontalScrollView>
-                    .
 
 
                     <!--    Design of scroll down card view-->
@@ -298,7 +150,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginVertical="15dp"
                     android:fontFamily="serif"
                     android:text="Patient Reviews"
                     android:textColor="#4C7375"
@@ -330,7 +182,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:alignmentMode="alignMargins"
-                                android:columnCount="3"
+                                android:columnCount="6"
                                 android:columnOrderPreserved="false"
                                 android:orientation="vertical"
                                 android:padding="10dp"
@@ -339,73 +191,76 @@
                                 >
 
                                 <androidx.cardview.widget.CardView
-                                    android:id="@+id/Doctor1"
+                                    android:id="@+id/review1"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_rowWeight="1"
                                     android:layout_columnWeight="1"
                                     android:layout_margin="12dp"
                                     app:cardCornerRadius="12dp"
-                                    app:cardElevation="20dp"
+                                    app:cardElevation="5dp"
 
                                     >
 
-                                    <LinearLayout
+                                    <RelativeLayout
                                         android:layout_width="300dp"
-                                        android:layout_height="wrap_content"
+                                        android:layout_height="165dp"
                                         android:gravity="center"
                                         android:orientation="vertical"
                                         android:padding="8dp">
 
                                         <de.hdodenhof.circleimageview.CircleImageView
+                                            android:id="@+id/docCircleImage"
                                             android:layout_width="50dp"
                                             android:layout_height="50dp"
                                             android:src="@drawable/person_1"
-                                            android:layout_marginLeft="-110dp"/>
+                                            android:layout_alignParentLeft="true"
+                                          />
 
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:layout_marginTop="-42dp"
-                                            android:text="Jhon Wick"
+                                            android:layout_toRightOf="@+id/docCircleImage"
+                                            android:text="Malinda Aluthge"
+                                            android:layout_alignParentRight="true"
                                             android:textStyle="bold"
-                                            android:textAlignment="center"
-                                            android:layout_marginLeft="-30dp"
+                                            android:gravity="left"
+                                            android:layout_marginLeft="30dp"
+                                            android:layout_marginTop="15dp"
                                             android:textColor="#6f6f6f"
-                                            android:textSize="16sp">
+                                            android:textSize="20sp">
 
                                         </TextView>
                                         <TextView
 
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:layout_marginTop="100px"
+                                            android:layout_alignParentBottom="true"
+
                                             android:text="Dr. Sanath Is A Highly Knowledgeable And Skilled Ayurvedic Doctor. His Personalized Approach To Healthcare And Focus On Improving Overall Health And Wellness Make Him An Excell."
                                             android:textAlignment="center"
-                                            android:layout_marginLeft="-1dp"
                                             android:textColor="#6f6f6f"
-                                            android:textSize="16sp">
+                                            android:textSize="14sp">
 
                                         </TextView>
 
-                                    </LinearLayout>
+                                    </RelativeLayout>
 
                                 </androidx.cardview.widget.CardView>
-
                                 <androidx.cardview.widget.CardView
-                                    android:id="@+id/Doctor2"
-                                    android:layout_width="300dp"
+                                    android:id="@+id/review2"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_rowWeight="1"
                                     android:layout_columnWeight="1"
                                     android:layout_margin="12dp"
                                     app:cardCornerRadius="12dp"
-                                    app:cardElevation="20dp"
+                                    app:cardElevation="5dp"
 
                                     >
 
-                                    <LinearLayout
+                                    <RelativeLayout
                                         android:layout_width="300dp"
                                         android:layout_height="wrap_content"
                                         android:gravity="center"
@@ -413,53 +268,56 @@
                                         android:padding="8dp">
 
                                         <de.hdodenhof.circleimageview.CircleImageView
+                                            android:id="@+id/docCircleImage1"
                                             android:layout_width="50dp"
                                             android:layout_height="50dp"
                                             android:src="@drawable/person_1"
-                                            android:layout_marginLeft="-110dp"/>
+                                            android:layout_alignParentLeft="true"
+                                            />
 
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:layout_marginTop="-42dp"
-                                            android:text="Jhon Wick"
+                                            android:layout_toRightOf="@+id/docCircleImage1"
+                                            android:text="Malinda Aluthge"
+                                            android:layout_alignParentRight="true"
                                             android:textStyle="bold"
-                                            android:textAlignment="center"
-                                            android:layout_marginLeft="-30dp"
+                                            android:gravity="left"
+                                            android:layout_marginLeft="30sp"
+                                            android:layout_marginTop="15dp"
                                             android:textColor="#6f6f6f"
-                                            android:textSize="16sp">
+                                            android:textSize="20sp">
 
                                         </TextView>
                                         <TextView
+
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:layout_marginTop="100px"
+                                            android:layout_alignParentBottom="true"
                                             android:text="Dr. Sanath Is A Highly Knowledgeable And Skilled Ayurvedic Doctor. His Personalized Approach To Healthcare And Focus On Improving Overall Health And Wellness Make Him An Excell."
                                             android:textAlignment="center"
-                                            android:layout_marginLeft="-1dp"
                                             android:textColor="#6f6f6f"
-                                            android:textSize="16sp">
+                                            android:textSize="14sp">
 
                                         </TextView>
 
-                                    </LinearLayout>
+                                    </RelativeLayout>
 
                                 </androidx.cardview.widget.CardView>
-
                                 <androidx.cardview.widget.CardView
-                                    android:id="@+id/Doctor3"
-                                    android:layout_width="300dp"
+                                    android:id="@+id/review3"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_rowWeight="1"
                                     android:layout_columnWeight="1"
                                     android:layout_margin="12dp"
                                     app:cardCornerRadius="12dp"
-                                    app:cardElevation="20dp"
+                                    app:cardElevation="5dp"
 
                                     >
 
-                                    <LinearLayout
+                                    <RelativeLayout
                                         android:layout_width="300dp"
                                         android:layout_height="wrap_content"
                                         android:gravity="center"
@@ -467,53 +325,56 @@
                                         android:padding="8dp">
 
                                         <de.hdodenhof.circleimageview.CircleImageView
+                                            android:id="@+id/docCircleImage2"
                                             android:layout_width="50dp"
                                             android:layout_height="50dp"
                                             android:src="@drawable/person_1"
-                                            android:layout_marginLeft="-110dp"/>
+                                            android:layout_alignParentLeft="true"
+                                            />
 
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:layout_marginTop="-42dp"
-                                            android:text="Jhon Wick"
+                                            android:layout_toRightOf="@+id/docCircleImage2"
+                                            android:text="Malinda Aluthge"
+                                            android:layout_alignParentRight="true"
                                             android:textStyle="bold"
-                                            android:textAlignment="center"
-                                            android:layout_marginLeft="-30dp"
+                                            android:gravity="left"
+                                            android:layout_marginLeft="30sp"
+                                            android:layout_marginTop="15dp"
                                             android:textColor="#6f6f6f"
-                                            android:textSize="16sp">
+                                            android:textSize="20sp">
 
                                         </TextView>
                                         <TextView
+
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:layout_marginTop="100px"
+                                            android:layout_alignParentBottom="true"
                                             android:text="Dr. Sanath Is A Highly Knowledgeable And Skilled Ayurvedic Doctor. His Personalized Approach To Healthcare And Focus On Improving Overall Health And Wellness Make Him An Excell."
                                             android:textAlignment="center"
-                                            android:layout_marginLeft="-1dp"
                                             android:textColor="#6f6f6f"
-                                            android:textSize="16sp">
+                                            android:textSize="14sp">
 
                                         </TextView>
 
-                                    </LinearLayout>
+                                    </RelativeLayout>
 
                                 </androidx.cardview.widget.CardView>
-
                                 <androidx.cardview.widget.CardView
-                                    android:id="@+id/Doctor4"
-                                    android:layout_width="300dp"
+                                    android:id="@+id/review4"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_rowWeight="1"
                                     android:layout_columnWeight="1"
                                     android:layout_margin="12dp"
                                     app:cardCornerRadius="12dp"
-                                    app:cardElevation="20dp"
+                                    app:cardElevation="5dp"
 
                                     >
 
-                                    <LinearLayout
+                                    <RelativeLayout
                                         android:layout_width="300dp"
                                         android:layout_height="wrap_content"
                                         android:gravity="center"
@@ -521,53 +382,56 @@
                                         android:padding="8dp">
 
                                         <de.hdodenhof.circleimageview.CircleImageView
+                                            android:id="@+id/docCircleImage3"
                                             android:layout_width="50dp"
                                             android:layout_height="50dp"
                                             android:src="@drawable/person_1"
-                                            android:layout_marginLeft="-110dp"/>
+                                            android:layout_alignParentLeft="true"
+                                            />
 
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:layout_marginTop="-42dp"
-                                            android:text="Jhon Wick"
+                                            android:layout_toRightOf="@+id/docCircleImage3"
+                                            android:text="Malinda Aluthge"
+                                            android:layout_alignParentRight="true"
                                             android:textStyle="bold"
-                                            android:textAlignment="center"
-                                            android:layout_marginLeft="-30dp"
+                                            android:gravity="left"
+                                            android:layout_marginLeft="30sp"
+                                            android:layout_marginTop="15dp"
                                             android:textColor="#6f6f6f"
-                                            android:textSize="16sp">
+                                            android:textSize="20sp">
 
                                         </TextView>
                                         <TextView
+
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:layout_marginTop="100px"
+                                            android:layout_alignParentBottom="true"
                                             android:text="Dr. Sanath Is A Highly Knowledgeable And Skilled Ayurvedic Doctor. His Personalized Approach To Healthcare And Focus On Improving Overall Health And Wellness Make Him An Excell."
                                             android:textAlignment="center"
-                                            android:layout_marginLeft="-1dp"
                                             android:textColor="#6f6f6f"
-                                            android:textSize="16sp">
+                                            android:textSize="14sp">
 
                                         </TextView>
 
-                                    </LinearLayout>
+                                    </RelativeLayout>
 
                                 </androidx.cardview.widget.CardView>
-
                                 <androidx.cardview.widget.CardView
-                                    android:id="@+id/Doctor5"
-                                    android:layout_width="300dp"
+                                    android:id="@+id/review5"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_rowWeight="1"
                                     android:layout_columnWeight="1"
                                     android:layout_margin="12dp"
                                     app:cardCornerRadius="12dp"
-                                    app:cardElevation="20dp"
+                                    app:cardElevation="5dp"
 
                                     >
 
-                                    <LinearLayout
+                                    <RelativeLayout
                                         android:layout_width="300dp"
                                         android:layout_height="wrap_content"
                                         android:gravity="center"
@@ -575,52 +439,56 @@
                                         android:padding="8dp">
 
                                         <de.hdodenhof.circleimageview.CircleImageView
+                                            android:id="@+id/docCircleImage4"
                                             android:layout_width="50dp"
                                             android:layout_height="50dp"
                                             android:src="@drawable/person_1"
-                                            android:layout_marginLeft="-110dp"/>
+                                            android:layout_alignParentLeft="true"
+                                            />
 
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:layout_marginTop="-42dp"
-                                            android:text="Jhon Wick"
+                                            android:layout_toRightOf="@+id/docCircleImage4"
+                                            android:text="Malinda Aluthge"
+                                            android:layout_alignParentRight="true"
                                             android:textStyle="bold"
-                                            android:textAlignment="center"
-                                            android:layout_marginLeft="-30dp"
+                                            android:gravity="left"
+                                            android:layout_marginLeft="30sp"
+                                            android:layout_marginTop="15dp"
                                             android:textColor="#6f6f6f"
-                                            android:textSize="16sp">
+                                            android:textSize="20sp">
 
                                         </TextView>
                                         <TextView
+
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:layout_marginTop="100px"
+                                            android:layout_alignParentBottom="true"
                                             android:text="Dr. Sanath Is A Highly Knowledgeable And Skilled Ayurvedic Doctor. His Personalized Approach To Healthcare And Focus On Improving Overall Health And Wellness Make Him An Excell."
                                             android:textAlignment="center"
-                                            android:layout_marginLeft="-1dp"
                                             android:textColor="#6f6f6f"
-                                            android:textSize="16sp">
+                                            android:textSize="14sp">
 
                                         </TextView>
 
-                                    </LinearLayout>
+                                    </RelativeLayout>
 
                                 </androidx.cardview.widget.CardView>
-
                                 <androidx.cardview.widget.CardView
-                                    android:id="@+id/Doctor6"
-                                    android:layout_width="300dp"
+                                    android:id="@+id/review6"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_rowWeight="1"
                                     android:layout_columnWeight="1"
                                     android:layout_margin="12dp"
                                     app:cardCornerRadius="12dp"
-                                    app:cardElevation="20dp"
+                                    app:cardElevation="5dp"
 
                                     >
-                                    <LinearLayout
+
+                                    <RelativeLayout
                                         android:layout_width="300dp"
                                         android:layout_height="wrap_content"
                                         android:gravity="center"
@@ -628,39 +496,45 @@
                                         android:padding="8dp">
 
                                         <de.hdodenhof.circleimageview.CircleImageView
+                                            android:id="@+id/docCircleImage5"
                                             android:layout_width="50dp"
                                             android:layout_height="50dp"
                                             android:src="@drawable/person_1"
-                                            android:layout_marginLeft="-110dp"/>
+                                            android:layout_alignParentLeft="true"
+                                            />
 
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:layout_marginTop="-42dp"
-                                            android:text="Jhon Wick"
+                                            android:layout_toRightOf="@+id/docCircleImage5"
+                                            android:text="Malinda Aluthge"
+                                            android:layout_alignParentRight="true"
                                             android:textStyle="bold"
-                                            android:textAlignment="center"
-                                            android:layout_marginLeft="-30dp"
+                                            android:gravity="left"
+                                            android:layout_marginLeft="30sp"
+                                            android:layout_marginTop="15dp"
                                             android:textColor="#6f6f6f"
-                                            android:textSize="16sp">
+                                            android:textSize="20sp">
 
                                         </TextView>
                                         <TextView
+
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:layout_marginTop="100px"
+                                            android:layout_alignParentBottom="true"
                                             android:text="Dr. Sanath Is A Highly Knowledgeable And Skilled Ayurvedic Doctor. His Personalized Approach To Healthcare And Focus On Improving Overall Health And Wellness Make Him An Excell."
                                             android:textAlignment="center"
-                                            android:layout_marginLeft="-1dp"
                                             android:textColor="#6f6f6f"
-                                            android:textSize="16sp">
+                                            android:textSize="14sp">
 
                                         </TextView>
 
-                                    </LinearLayout>
+                                    </RelativeLayout>
 
                                 </androidx.cardview.widget.CardView>
+
+
 
 
                             </GridLayout>

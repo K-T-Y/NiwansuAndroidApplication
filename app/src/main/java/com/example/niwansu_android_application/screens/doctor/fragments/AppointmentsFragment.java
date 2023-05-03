@@ -6,6 +6,7 @@ import static com.example.niwansu_android_application.core.Constants.KEY_FIRST_N
 import static com.example.niwansu_android_application.core.Constants.KEY_LAST_NAME;
 import static com.example.niwansu_android_application.core.Constants.PREFERENCE_NAME;
 
+import android.app.Application;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -27,6 +28,9 @@ import com.example.niwansu_android_application.core.AppointmentsList;
 import com.example.niwansu_android_application.core.Constants;
 import com.example.niwansu_android_application.core.NetworkClient;
 import com.example.niwansu_android_application.core.NetworkService;
+import com.zegocloud.uikit.prebuilt.call.config.ZegoNotificationConfig;
+import com.zegocloud.uikit.prebuilt.call.invite.ZegoUIKitPrebuiltCallInvitationConfig;
+import com.zegocloud.uikit.prebuilt.call.invite.ZegoUIKitPrebuiltCallInvitationService;
 
 import java.util.List;
 
@@ -95,7 +99,7 @@ public class AppointmentsFragment extends Fragment {
             @Override
             public void onResponse(Call<List<AppointmentsList>> call, Response<List<AppointmentsList>> response) {
                 appointments = response.body();
-                System.out.println(appointments.get(0).getBookeddate());
+             //   System.out.println(appointments.get(0).getBookeddate());
                 adapterNotification = new AdapterPatientAppointments(appointments, getContext());
                 recyclerView.setAdapter(adapterNotification);
                 adapterNotification.notifyDataSetChanged();
@@ -136,4 +140,6 @@ public class AppointmentsFragment extends Fragment {
             }
         });
     }
+
+
 }

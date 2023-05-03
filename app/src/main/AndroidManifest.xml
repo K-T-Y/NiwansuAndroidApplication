@@ -22,6 +22,9 @@
         android:theme="@style/Theme.NiwansuAndroidApplication"
         tools:targetApi="31">
         <activity
+            android:name=".screens.doctor.activities.VideoCallDoctorActivity"
+            android:exported="false" />
+        <activity
             android:name=".screens.patient.activities.KidneyDiseaseCheckActivity"
             android:exported="false" />
         <activity
@@ -32,6 +35,9 @@
             android:exported="false" />
         <activity
             android:name=".screens.patient.activities.DiabetesCheckActivity"
+            android:exported="false" />
+        <activity
+            android:name=".screens.patient.activities.UpdateProfileActivity"
             android:exported="false" />
         <activity
             android:name=".screens.patient.activities.ConversationActivity"

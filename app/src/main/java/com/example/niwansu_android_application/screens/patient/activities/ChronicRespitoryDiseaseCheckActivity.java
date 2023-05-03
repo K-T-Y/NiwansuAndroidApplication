@@ -140,11 +140,11 @@ public class ChronicRespitoryDiseaseCheckActivity extends AppCompatActivity impl
                     currentQuestionIndex++;
                     loadNewQuestion();
                 } else if (selectedAnswer.equals(QuizChronicRepositiryDiseaseClass.Answer3[currentQuestionIndex])) {
-                    score = new Integer(score + 2);
+                    score = new Integer(score + 3);
                     currentQuestionIndex++;
                     loadNewQuestion();
                 } else if (selectedAnswer.equals(QuizChronicRepositiryDiseaseClass.Answer4[currentQuestionIndex])) {
-                    score = new Integer(score + 3);
+                    score = new Integer(score + 5);
                     currentQuestionIndex++;
                     loadNewQuestion();
                 } else if (selectedAnswer.equals("")) {

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/icon_home"
+        android:title="HOME"/>
+    <item
+        android:id="@+id/socialmedia"
+        android:icon="@drawable/icon_socialmedia"
+        android:title="SOCIAL MEDIA"/>
+    <item
+        android:id="@+id/chat"
+        android:icon="@drawable/icon_chat"
+        android:title="CHAT"/>
+    <item
+        android:id="@+id/calender"
+        android:icon="@drawable/icon_calender"
+        android:title="CALENDER"/>
+    <item
+        android:id="@+id/myMenu"
+        android:icon="@drawable/icon_my_menu"
+        android:title="MAP"/>
+
+
+
+
+</menu>

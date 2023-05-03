@@ -2,6 +2,7 @@ package com.example.niwansu_android_application.screens.doctor.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.niwansu_android_application.R;
@@ -14,7 +15,10 @@ public class DoctorConversationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_conversation);
-        startSingleChat("Patient");
+        Intent i = getIntent();
+        String userID =  i.getStringExtra("userID");
+
+        startSingleChat(userID);
     }
 
 

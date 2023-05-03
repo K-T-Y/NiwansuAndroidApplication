@@ -14,6 +14,7 @@ import com.example.niwansu_android_application.screens.doctor.fragments.Appointm
 import com.example.niwansu_android_application.screens.doctor.fragments.DoctorChatFragment;
 import com.example.niwansu_android_application.screens.doctor.fragments.FeedFragment;
 import com.example.niwansu_android_application.screens.doctor.fragments.HomeFragment;
+import com.example.niwansu_android_application.screens.patient.activities.MainActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.zegocloud.zimkit.services.ZIMKit;
@@ -24,17 +25,24 @@ public class DoctorMainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
 
     DoctorChatFragment doctorChatFragment=new DoctorChatFragment();
+
+    public static DoctorMainActivity sInstance;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_main);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
-
+        sInstance = this;
+        long appId =1237621987 ;    // The AppID you get from ZEGOCLOUD Admin Console.
+        String appSign ="b40727d97be6263d11bf3e6b1847022a036a8d9b0c3cf66a766072668cedc876" ;    // The App Sign you get from ZEGOCLOUD Admin Console.
+        ZIMKit.initWith(getApplication(),appId,appSign);
+        // Online notification for the initialization (use the following code if this is needed).
+        ZIMKit.initNotifications();
         AppointmentsFragment appointmentsFragment=new AppointmentsFragment();
         HomeFragment homeFragment=new HomeFragment();
         FeedFragment feedFragment=new FeedFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
-      
+
         bottomNavigationView.setOnItemReselectedListener(new NavigationBarView.OnItemReselectedListener() {
             @Override
             public void onNavigationItemReselected(MenuItem item) {
@@ -50,12 +58,14 @@ public class DoctorMainActivity extends AppCompatActivity {
 
 
                     case R.id.chat:
-                        buttonClick();
+                      //  buttonClick();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container, doctorChatFragment).commit();
+
 
                         return;
 
 
-//                    case R.id.map:
+//                    case R.id.myMenu:
 //                        getSupportFragmentManager().beginTransaction().replace(R.id.container, mapFragment).commit();
 //                        return;
 

@@ -36,6 +36,20 @@
         android:textStyle="bold"
 
         />
+    <ImageView
+        android:id="@+id/menuIcon"
+        android:padding="4dp"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:gravity="right"
+        android:src="@drawable/icon_dots"
+
+
+
+        />
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/DocImage"
         android:layout_width="65dp"
@@ -58,12 +72,26 @@
         android:layout_toRightOf="@+id/DocImage"
         android:gravity="center"
         android:layout_marginLeft="20dp"
-        android:textStyle="italic"
+        android:textStyle="bold"
         android:paddingBottom="10dp"
         android:paddingLeft="5dp"
         android:text="Occupation"
         android:textSize="15sp" />
 
+    <TextView
+        android:id="@+id/txtEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/txtOccupation"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:layout_marginLeft="20dp"
+        android:visibility="gone"
+        android:textStyle="italic"
+        android:paddingBottom="10dp"
+        android:paddingLeft="5dp"
+        android:text="Email"
+        android:textSize="15sp" />
 
 </RelativeLayout>
 

@@ -1,6 +1,8 @@
 package com.example.niwansu_android_application.screens.patient.activities;
 
 import static com.example.niwansu_android_application.core.Constants.KEY_EMAIL;
+import static com.example.niwansu_android_application.core.Constants.KEY_FIRST_NAME;
+import static com.example.niwansu_android_application.core.Constants.KEY_LAST_NAME;
 import static com.example.niwansu_android_application.core.Constants.PREFERENCE_NAME;
 
 import androidx.annotation.NonNull;
@@ -41,6 +43,7 @@ public class BookDoctorActivity extends AppCompatActivity {
     CalendarView calendarView;
 
     public String sd = "";
+    public  String time = "Not Assigned";
     public String appointmentStatus = "Pending";
     AppCompatButton btnBookAppointment;
     int imagevalue;
@@ -71,8 +74,9 @@ public class BookDoctorActivity extends AppCompatActivity {
 
         //   String name = sharedPreferences.getString(KEY_NAME, null);
         String PatientEmail = sharedPreferences.getString(KEY_EMAIL, null);
-
-
+        String fname = sharedPreferences.getString(KEY_FIRST_NAME ,null);
+        String lName = sharedPreferences.getString(KEY_LAST_NAME ,null);
+        String patientName = fname +" "+lName;
 
         //GetImage of the selected doctor from previous Activity
         Bundle bundle = getIntent().getExtras();
@@ -99,7 +103,8 @@ public class BookDoctorActivity extends AppCompatActivity {
         btnBookAppointment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                UploadDoctorSchedule(DoctorName, PatientEmail);
+              //  Toast.makeText(BookDoctorActivity.this, patientName, Toast.LENGTH_SHORT).show();
+              UploadDoctorSchedule(DoctorName, PatientEmail,patientName);
             }
         });
 
@@ -116,12 +121,14 @@ public class BookDoctorActivity extends AppCompatActivity {
 
     }
 
-    public void UploadDoctorSchedule(String docName, String PatientEmail) {
+    public void UploadDoctorSchedule(String docName, String PatientEmail,String pName) {
 
         HashMap<String, String> params = new HashMap<>();
         params.put("doctorname", docName);
         params.put("patientemail", PatientEmail);
+        params.put("patientname",pName);
         params.put("bookeddate", sd);
+        params.put("time", time);
         params.put("doctorapprovalstatus", appointmentStatus);
 
 

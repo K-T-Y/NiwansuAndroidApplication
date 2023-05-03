@@ -1,6 +1,8 @@
 package com.example.niwansu_android_application.core;
 
 
+import com.example.niwansu_android_application.models.changeStatusModel;
+
 import java.util.HashMap;
 import java.util.List;
 
@@ -55,6 +57,8 @@ public interface NetworkService {
 
     );
 
+    @GET("getUsers.php")
+    Call<List<Users>> getUsers();
     @GET("getPatientsList.php")
     Call<List<Users>> getPatientsList(
 
@@ -75,6 +79,7 @@ public interface NetworkService {
             @Query("name") String name
 
     );
+
 
 
     @GET("fetchAppointmentsAccepted.php")
@@ -101,73 +106,17 @@ public interface NetworkService {
 
     );
 
-//    @FormUrlEncoded
-//    @POST("login.php")
-//    Call<LoginResponseModel> login(@Field("email") String email, @Field("password") String password);
-//
-//    @FormUrlEncoded
-//    @POST("profile.php")
-//    Call<SetupProfileResponseModel> profile(@FieldMap HashMap<String, String> params);
-//
-//    @FormUrlEncoded
-//    @POST("TestHistory.php")
-//    Call<QuestionnaireResponseModel> upload(@FieldMap HashMap<String, String> params);
-//
-//
-//    @FormUrlEncoded
-//    @POST("DoctorSchedule.php")
-//    Call<DocResponseModel> doctorschedule(@FieldMap HashMap<String, String> params);
-//
-//
-//
-//
-//    @GET("getdoctorscheduledates.php")
-//    Call<List<Users>> getUsers(
-//
-//            @Query("key") String key,
-//            @Query("doctorid") String doctorid
-//
-//    );
-//    @GET("getdoctorscheduleddatesevening.php")
-//    Call<List<Users>> getUsers2(
-//
-//            @Query("key") String key,
-//            @Query("doctorid") String doctorid
-//
-//    );
-//
-//    @GET("FetchNotification.php")
-//    Call<List<Users>> getNotification(
-//
-//            @Query("patientid") String patientid
-//
-//    );
-//    @GET("getTestResults.php")
-//    Call<List<TestResults>> getTestResults(
-//
-//            @Query("userid") String patientid
-//
-//    );
-////    @FormUrlEncoded
-////    @POST("appointmentaccept.php")
-////    Call<AppointmentResponseModel> doctorappointmentaccept(@FieldMap HashMap<String, String> params);
-//
-//
-//    @FormUrlEncoded
-//    @POST("appointmentaccept.php")
-//    Call<AppointmentResponseModel> doctorappointmentaccept(
-//            @Field("key") String key,
-//            @Field("id") int id,
-//            @Field("doctorapprovalstatus") String appAccept,
-//              @Field("timeslotassigned") String timeslot);
-//
-//    @FormUrlEncoded
-//    @POST("appointmentaccept.php")
-//    Call<AppointmentResponseModel> doctorappointmentdeclined(
-//            @Field("key") String key,
-//            @Field("id") int id,
-//            @Field("doctorapprovalstatus") String appAccept);
-//
+    @FormUrlEncoded
+    @POST("updateStatus.php")
+    Call<changeStatusModel> changeStatus(@Field("req_id") int req_id, @Field("status") String status,@Field("time") String time);
+
+
+    @FormUrlEncoded
+    @POST("updateProfile.php")
+    Call<changeStatusModel> updateProfile(@Field("fname") String fname, @Field("lname") String lname,@Field("email") String email,@Field("contact") String contact,@Field("password") String password);
+
+
+
 
 
 }
