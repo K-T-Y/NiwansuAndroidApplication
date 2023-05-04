@@ -1,65 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_500"
-    android:gravity="center"
     android:orientation="vertical"
-    tools:context=".screens.doctor.activities.VideoCallDoctorActivity">
+    tools:context=".screens.doctor.activities.VideoCallActivity">
 
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Connecting with,"
+        android:gravity="center"
+        android:fontFamily="monospace"
+        android:textSize="20sp"
+        android:textColor="@color/purple_700"
+
+        />
 
     <TextView
         android:id="@+id/HeyUserId"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="HEY USER!"
-        android:visibility="invisible"
         android:fontFamily="monospace"
-        android:textSize="32sp"
-        android:textColor="@color/white"
-        android:layout_marginTop="50dp"
-        />
-    <TextView
+        android:textSize="20sp"
+        android:textColor="@color/purple_700"
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Start video chat..."
-        android:fontFamily="monospace"
-        android:textSize="18sp"
-        android:textColor="@color/white"
-        android:layout_marginTop="50dp"
         />
 
 
     <RelativeLayout
+        android:id="@+id/rL1"
+        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:background="@drawable/round_layout"
+        android:layout_marginHorizontal="40dp"
 
         >
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_toLeftOf="@+id/voicecall"
+            android:gravity="center_vertical"
+            android:paddingLeft="40dp"
+            android:text="Audio"
+            android:textColor="@color/GreenText"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
         <com.zegocloud.uikit.prebuilt.call.invite.widget.ZegoSendCallInvitationButton
             android:id="@+id/voicecall"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_centerVertical="true"
-            android:textColor="@color/GreenText"
-            android:layout_marginHorizontal="10dp"
-            android:layout_toLeftOf="@+id/VideoCall">
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginHorizontal="60dp"
+            android:textColor="@color/GreenText">
 
         </com.zegocloud.uikit.prebuilt.call.invite.widget.ZegoSendCallInvitationButton>
+    </RelativeLayout>
 
+    <RelativeLayout
+        android:id="@+id/rL2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/round_layout"
+        android:layout_marginHorizontal="40dp"
+        >
+
+        <TextView
+            android:id="@+id/txtVideoCall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_toLeftOf="@+id/VideoCall"
+            android:gravity="center_vertical"
+            android:paddingLeft="40dp"
+            android:text="Video"
+            android:textColor="@color/GreenText"
+            android:textStyle="bold"
+            android:textSize="18sp" />
 
         <com.zegocloud.uikit.prebuilt.call.invite.widget.ZegoSendCallInvitationButton
             android:id="@+id/VideoCall"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_marginHorizontal="10dp"
-
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginHorizontal="60dp"
 
 
             >
@@ -91,5 +132,5 @@
         android:layout_centerVertical="true"
         android:layout_toLeftOf="@id/voicecall"
         />
-
-</LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

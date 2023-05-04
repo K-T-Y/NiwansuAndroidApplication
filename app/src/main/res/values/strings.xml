@@ -40,8 +40,9 @@
     <string-array name="user_catergory">
         <item>10.00 AM - 11.00 AM</item>
         <item>11.00 AM - 12.00 PM</item>
-        <item>2.00 PM-3.00 PM</item>
+        <item>2.00 PM - 3.00 PM</item>
         <item>3.00 PM-4.00 PM</item>
+
     </string-array>
 
     <string-array name="postpartum_stagelist">

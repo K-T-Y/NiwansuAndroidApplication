@@ -74,6 +74,19 @@
                             android:textStyle="normal">
 
                         </TextView>
+                        <TextView
+                            android:id="@+id/username"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_below="@+id/pro_pic"
+                            android:text="Pure Wellness for Sri Lanka"
+                            android:textColor="#4C7375"
+                            android:textSize="11sp"
+                            android:textStyle="normal">
+
+                        </TextView>
 
                         <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/pro_pic"
@@ -412,7 +425,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="10dp"
                     android:fontFamily="serif"
-                    android:text="Channeling made easy!!"
+                    android:text="Book an Appointment"
                     android:textColor="#4C7375"
                     android:textSize="14sp"
                     android:textStyle="normal"
@@ -726,7 +739,7 @@
                     android:layout_marginHorizontal="10dp"
                     android:layout_marginBottom="10dp"
                     android:fontFamily="serif"
-                    android:text="Taking a quick check-up test might help you to identify certain diseases before channling a doctor"
+                    android:text="Taking a quick check-up test might help you to identify certain diseases quickly!"
                     android:textColor="#4C7375"
                     android:textSize="12sp"
                     android:textStyle="normal" />

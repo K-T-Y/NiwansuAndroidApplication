@@ -24,6 +24,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.niwansu_android_application.R;
 
+import com.example.niwansu_android_application.core.Constants;
 import com.example.niwansu_android_application.screens.patient.activities.BookDoctorActivity;
 import com.example.niwansu_android_application.screens.patient.activities.ChronicRespitoryDiseaseCheckActivity;
 import com.example.niwansu_android_application.screens.patient.activities.DiabetesCheckActivity;
@@ -40,7 +41,7 @@ public class HomeFragment extends Fragment {
     CardView doctor1, doctor2, doctor3, doctor4, doctor5, doctor6, crdDiabetes,crdHeartDisease,crdKidney,crdChronic;
 
 
-    TextView txtName;
+    TextView txtUsername;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,11 +56,19 @@ public class HomeFragment extends Fragment {
         doctor4 = view.findViewById(R.id.Doctor4);
         doctor5 = view.findViewById(R.id.Doctor5);
         doctor6 = view.findViewById(R.id.Doctor6);
+        txtUsername = view.findViewById(R.id.username);
 
         crdDiabetes = view.findViewById(R.id.crdDiabetes);
         crdHeartDisease = view.findViewById(R.id.crdHeartDisease);
         crdKidney = view.findViewById(R.id.crdKidneyDisease);
         crdChronic = view.findViewById(R.id.crdChronicRespitoryDisease);
+
+
+        //set username
+
+        sharedPreferences =this.getActivity().getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
+        String name = (sharedPreferences.getString(Constants.KEY_FIRST_NAME,null))+" "+(sharedPreferences.getString(Constants.KEY_LAST_NAME,null));
+        txtUsername.setText(name);
 
 
         //  txtName = view.findViewById(R.id.txtName);

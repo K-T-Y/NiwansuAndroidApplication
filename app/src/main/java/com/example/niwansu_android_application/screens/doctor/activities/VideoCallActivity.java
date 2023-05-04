@@ -12,7 +12,7 @@ import com.zegocloud.uikit.service.defines.ZegoUIKitUser;
 
 import java.util.Collections;
 
-public class VideoCallDoctorActivity extends AppCompatActivity {
+public class VideoCallActivity extends AppCompatActivity {
 
     TextView HeyUserTV;
     EditText UserIDET;

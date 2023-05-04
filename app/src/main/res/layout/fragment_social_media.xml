@@ -1,38 +1,335 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".screens.patient.fragments.SocialMediaFragment">
+    tools:context=".screens.doctor.fragments.FeedFragment">
 
+    <RelativeLayout
+        android:id="@+id/rL1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+
+            android:id="@+id/Loggedinuser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="0dp"
+            android:text="Suggestions"
+            android:textColor="#4F7C7E"
+            android:textSize="20sp"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/subLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="30dp"
+            android:text="Latest News"
+            android:textColor="#4C7375"
+            android:textSize="14sp"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/pro_pic"
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:layout_alignParentRight="true"
+            android:paddingRight="10dp">
+
+
+        </de.hdodenhof.circleimageview.CircleImageView>
+
+
+    </RelativeLayout>
 
     <FrameLayout
-        android:id="@+id/FrameNotification"
+        android:id="@+id/fL1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="100dp"
+        android:orientation="horizontal">
+
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+
+                >
+
+                <GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alignmentMode="alignMargins"
+                    android:columnCount="6"
+
+                    android:layout_weight="1"
+                    android:columnOrderPreserved="false"
+                    android:orientation="horizontal"
+                    android:rowCount="1"
+
+                    >
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/Doctor1"
+                        android:layout_width="200dp"
+                        android:layout_height="120dp"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        app:cardCornerRadius="15dp">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+
+
+                            >
+                            <LinearLayout
+                                android:id="@+id/lL1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingHorizontal="5dp"
+                                android:background="@drawable/person_1"
+                                android:layout_above="@+id/txt1"
+                                android:orientation="vertical"
+                                app:cardCornerRadius="45dp" />
+
+                            <TextView
+                                android:id="@+id/txt1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="11sp"
+
+                                android:gravity="center_horizontal"
+                                android:layout_alignParentBottom="true"
+                                android:text="Triage of suspected  COVID 19" />
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/Doctor2"
+                        android:layout_width="200dp"
+                        android:layout_height="120dp"
+                        app:cardCornerRadius="15dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <LinearLayout
+                                android:id="@+id/lL2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/person_1"
+                                android:layout_above="@+id/txt2"
+                                android:orientation="vertical"
+                                app:cardCornerRadius="45dp" />
+
+                            <TextView
+                                android:id="@+id/txt2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="11sp"
+
+                                android:gravity="center_horizontal"
+                                android:layout_alignParentBottom="true"
+                                android:text="Triage of suspected  COVID 19" />
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/Doctor3"
+                        android:layout_width="200dp"
+                        android:layout_height="120dp"
+                        android:padding="10dp"
+                        app:cardCornerRadius="15dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+
+                            >
+                            <LinearLayout
+                                android:id="@+id/lL3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/person_1"
+                                android:layout_above="@+id/txt3"
+                                android:orientation="vertical"
+                                app:cardCornerRadius="45dp" />
+
+                            <TextView
+                                android:id="@+id/txt3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="11sp"
+
+                                android:gravity="center_horizontal"
+                                android:layout_alignParentBottom="true"
+                                android:text="Triage of suspected  COVID 19" />
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/Doctor4"
+                        android:layout_width="200dp"
+                        android:layout_height="120dp"
+                        app:cardCornerRadius="15dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <LinearLayout
+                                android:id="@+id/lL4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/person_1"
+                                android:layout_above="@+id/txt4"
+                                android:orientation="vertical"
+                                app:cardCornerRadius="45dp" />
+
+                            <TextView
+                                android:id="@+id/txt4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:textSize="11sp"
+                                android:text="Triage of suspected  COVID 19" />
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/Doctor5"
+                        android:layout_width="200dp"
+                        android:layout_height="120dp"
+                        app:cardCornerRadius="15dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <LinearLayout
+                                android:id="@+id/lL5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/person_1"
+                                android:layout_above="@+id/txt5"
+                                android:orientation="vertical"
+                                app:cardCornerRadius="45dp" />
+
+                            <TextView
+                                android:id="@+id/txt5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="11sp"
+
+                                android:gravity="center_horizontal"
+                                android:layout_alignParentBottom="true"
+                                android:text="Triage of suspected  COVID 19" />
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/Doctor6"
+                        android:layout_width="200dp"
+                        android:layout_height="120dp"
+                        app:cardCornerRadius="15dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <LinearLayout
+                                android:id="@+id/lL6"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/person_1"
+                                android:layout_above="@+id/txt6"
+                                android:orientation="vertical"
+                                app:cardCornerRadius="45dp" />
+
+                            <TextView
+                                android:id="@+id/txt6"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="11sp"
+
+                                android:gravity="center_horizontal"
+                                android:layout_alignParentBottom="true"
+                                android:text="Triage of suspected  COVID 19" />
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+                </GridLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+    </FrameLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fL1"
+        >
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@drawable/round_layout">
 
-            android:orientation="vertical">
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="40dp"
-                android:textSize="20dp"
-                android:text="MY SCHEDULED CONSULTATIONS"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="40dp"/>
-
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:layout_marginHorizontal="10dp"
+                android:text="Personalised Feed"
+                android:textColor="@color/GreenText"
+                android:textSize="24dp"
+                android:textStyle="bold" />
         </LinearLayout>
-    </FrameLayout>
 
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/txt7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:text="Suggeston feed will be personalized\nbased on your services "
+        android:textColor="@color/purple_700"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+
+
+
+        />
 </RelativeLayout>

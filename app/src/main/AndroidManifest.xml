@@ -22,7 +22,7 @@
         android:theme="@style/Theme.NiwansuAndroidApplication"
         tools:targetApi="31">
         <activity
-            android:name=".screens.doctor.activities.VideoCallDoctorActivity"
+            android:name=".screens.doctor.activities.VideoCallActivity"
             android:exported="false" />
         <activity
             android:name=".screens.patient.activities.KidneyDiseaseCheckActivity"

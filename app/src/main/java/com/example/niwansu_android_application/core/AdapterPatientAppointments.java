@@ -3,7 +3,6 @@ package com.example.niwansu_android_application.core;
 import static android.content.Context.MODE_PRIVATE;
 import static com.example.niwansu_android_application.core.Constants.PREFERENCE_NAME;
 
-import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
@@ -22,7 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.niwansu_android_application.R;
 import com.example.niwansu_android_application.models.changeStatusModel;
 import com.example.niwansu_android_application.screens.doctor.activities.DoctorMainActivity;
-import com.example.niwansu_android_application.screens.doctor.activities.VideoCallDoctorActivity;
+import com.example.niwansu_android_application.screens.doctor.activities.VideoCallActivity;
 import com.zegocloud.uikit.prebuilt.call.config.ZegoNotificationConfig;
 import com.zegocloud.uikit.prebuilt.call.invite.ZegoUIKitPrebuiltCallInvitationConfig;
 import com.zegocloud.uikit.prebuilt.call.invite.ZegoUIKitPrebuiltCallInvitationService;
@@ -56,7 +55,7 @@ public class AdapterPatientAppointments extends RecyclerView.Adapter <AdapterPat
     public void onBindViewHolder(MyViewHolder holder, int position) {
         holder.appointmentNo.setText("Appointment No : "+appointments.get(position).getId());
         holder.Date.setText("" + appointments.get(position).getBookeddate());
-        holder.doctor.setText(""+appointments.get(position).getDoctorname());
+
         holder.time.setText("" + appointments.get(position).getTime());
         holder.status.setText(""+appointments.get(position).getDoctorapprovalstatus());
         String patientname = appointments.get(position).getPatientname();
@@ -67,12 +66,14 @@ public class AdapterPatientAppointments extends RecyclerView.Adapter <AdapterPat
 
         if(category.equals("doctor"))
         {
+            holder.doctor.setText(""+appointments.get(position).getPatientname());
             if(appointments.get(position).getDoctorapprovalstatus().equals("Accepted"))
             {
 
                 holder.btn_reject.setVisibility(View.INVISIBLE);
                 holder.btn_accept.setVisibility(View.INVISIBLE);
                 holder.spin_time.setVisibility(View.INVISIBLE);
+                holder.btn_video.setVisibility(View.INVISIBLE);
 
             }
             else if(appointments.get(position).getDoctorapprovalstatus().equals("Rejected"))
@@ -81,22 +82,30 @@ public class AdapterPatientAppointments extends RecyclerView.Adapter <AdapterPat
                 holder.btn_accept.setVisibility(View.GONE);
                 holder.btn_video.setVisibility(View.GONE);
                  holder.spin_time.setVisibility(View.INVISIBLE);
+                 holder.btn_video_patient.setVisibility(View.GONE);
              }
             else
             {
+                holder.btn_video_patient.setVisibility(View.GONE);
+                holder.btn_reject.setVisibility(View.GONE);
+                holder.btn_accept.setVisibility(View.GONE);
+                holder.btn_video_patient.setVisibility(View.GONE);
+                holder.spin_time.setVisibility(View.GONE);
 
                 holder.btn_video.setVisibility(View.GONE);
                 holder.time.setVisibility(View.INVISIBLE);
             }
         }
         else {
+            holder.doctor.setText(""+appointments.get(position).getDoctorname());
             if(appointments.get(position).getDoctorapprovalstatus().equals("Accepted"))
             {
 
                 holder.btn_reject.setVisibility(View.GONE);
                 holder.btn_accept.setVisibility(View.GONE);
                 holder.spin_time.setVisibility(View.GONE);
-                holder.btn_video.setVisibility(View.GONE);
+              //  holder.btn_video.setVisibility(View.GONE);
+                holder.btn_video_patient.setVisibility(View.GONE);
 
             }
             else if(appointments.get(position).getDoctorapprovalstatus().equals("Rejected"))
@@ -174,9 +183,9 @@ holder.btn_accept.setOnClickListener(new View.OnClickListener() {
         holder.btn_video.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String username = patientname;
+             //   String username = patientname;
 
-
+                String username= appointments.get(position).getDoctorname();
                 if (userID.isEmpty())
                 {
                     return;
@@ -184,7 +193,7 @@ holder.btn_accept.setOnClickListener(new View.OnClickListener() {
 
 
                 startService(userID);
-                Intent intent = new Intent(context.getApplicationContext(), VideoCallDoctorActivity.class);
+                Intent intent = new Intent(context.getApplicationContext(), VideoCallActivity.class);
                 intent.putExtra("userID",userID);
                 intent.putExtra("UserName",username );
                 context.startActivity(intent);
@@ -195,7 +204,7 @@ holder.btn_accept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                String username= holder.doctor.getText().toString();
-                Toast.makeText(context, patientname, Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, username, Toast.LENGTH_SHORT).show();
 
                 if (userID.isEmpty())
                 {
@@ -204,7 +213,7 @@ holder.btn_accept.setOnClickListener(new View.OnClickListener() {
 
 
                 startService(userID);
-                Intent intent = new Intent(context.getApplicationContext(), VideoCallDoctorActivity.class);
+                Intent intent = new Intent(context.getApplicationContext(), VideoCallActivity.class);
                 intent.putExtra("userID",userID);
                 intent.putExtra("UserName",username );
                 context.startActivity(intent);

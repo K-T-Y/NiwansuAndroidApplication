@@ -51,13 +51,13 @@ public class MapViewFragment extends Fragment {
 
 
 
-                LatLng vihara = new LatLng(6.919976718611493, 79.87052391958046);
+                LatLng vihara = new LatLng(6.909976718611493, 79.87052391958046);
                 googleMap.addMarker(new MarkerOptions()
                         .position(vihara)
                         .title("Dr.Vihara Pathirage"));
                 googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(vihara,14));
 
-                LatLng Mahesh = new LatLng(6.913976718611493, 79.86052391958046);
+                LatLng Mahesh = new LatLng(6.903976718611493, 79.86052391958046);
                 googleMap.addMarker(new MarkerOptions()
                         .position(Mahesh)
                         .title("Dr.Mahesh Pathirana"));
@@ -69,13 +69,13 @@ public class MapViewFragment extends Fragment {
                         .title("Dr.Anjela Colonne"));
                 googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(Anjela,14));
 
-                LatLng Sachini = new LatLng(6.915976718611493, 79.87152391958046);
+                LatLng Sachini = new LatLng(6.905976718611493, 79.87152391958046);
                 googleMap.addMarker(new MarkerOptions()
                         .position(Sachini)
                         .title("Dr.Sachini Gallage"));
                 googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(Sachini,14));
 
-                LatLng Himasha = new LatLng(6.914976718611493, 79.86252391958046);
+                LatLng Himasha = new LatLng(6.904976718611493, 79.86252391958046);
                 googleMap.addMarker(new MarkerOptions()
                         .position(Himasha)
                         .title("Dr.Himasha Perera"));
