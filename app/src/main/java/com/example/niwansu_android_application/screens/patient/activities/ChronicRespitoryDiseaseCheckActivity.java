@@ -136,7 +136,7 @@ public class ChronicRespitoryDiseaseCheckActivity extends AppCompatActivity impl
                     currentQuestionIndex++;
                     loadNewQuestion();
                 } else if (selectedAnswer.equals(QuizChronicRepositiryDiseaseClass.Answer2[currentQuestionIndex])) {
-                    score = new Integer(score + 1);
+                    score = new Integer(score + 2);
                     currentQuestionIndex++;
                     loadNewQuestion();
                 } else if (selectedAnswer.equals(QuizChronicRepositiryDiseaseClass.Answer3[currentQuestionIndex])) {
@@ -189,12 +189,12 @@ public class ChronicRespitoryDiseaseCheckActivity extends AppCompatActivity impl
     void finishQuiz() {
 
         if (score < 10) {
-            questionTextView.setText("Your Score is " + score);
+            questionTextView.setText("Your Score is " + score+" and you don't have to worry about having Chronic respiratory diseases ");
         }else if (score <=20)
         {
-            questionTextView.setText("Your Score is " + score+ " You have a slight chance of having respitory disease");
+            questionTextView.setText("Your Score is " + score+ " You have a slight chance of having Chronic respiratory diseases\n Make sure to channel one of our doctor as soon as possible");
         } else if (score<=30) {
-            questionTextView.setText("Your Score is " + score+ " You have a over 75% chance of having chronic respitory disease.\n Make sure to channel one of our doctor as soon as possible");
+            questionTextView.setText("Your Score is " + score+ " You have a over 75% chance of having Chronic respiratory diseases.\n Make sure to channel one of our doctor as soon as possible");
         }
 
         ansA.setVisibility(View.INVISIBLE);

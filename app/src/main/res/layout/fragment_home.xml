@@ -84,7 +84,7 @@
                             android:text="Pure Wellness for Sri Lanka"
                             android:textColor="#4C7375"
                             android:textSize="11sp"
-                            android:textStyle="normal">
+                            android:textStyle="bold">
 
                         </TextView>
 

@@ -25,6 +25,7 @@ import androidx.fragment.app.Fragment;
 import com.example.niwansu_android_application.R;
 
 import com.example.niwansu_android_application.core.Constants;
+import com.example.niwansu_android_application.screens.doctor.activities.ProfileActivity;
 import com.example.niwansu_android_application.screens.patient.activities.BookDoctorActivity;
 import com.example.niwansu_android_application.screens.patient.activities.ChronicRespitoryDiseaseCheckActivity;
 import com.example.niwansu_android_application.screens.patient.activities.DiabetesCheckActivity;
@@ -43,6 +44,7 @@ public class HomeFragment extends Fragment {
 
     TextView txtUsername;
 
+    ProfileActivity profileActivity = new ProfileActivity();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -159,7 +161,14 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
+        pro_pic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+               getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, profileActivity).commit();
+                return;
+            }
+        });
 
         return view;
     }

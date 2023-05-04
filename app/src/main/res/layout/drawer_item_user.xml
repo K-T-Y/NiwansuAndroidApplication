@@ -18,9 +18,9 @@
             android:padding="5dp"
             android:orientation="vertical">
             <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="75dp"
-                android:layout_height="65dp"
-                android:padding="10dp"
+                android:layout_width="90dp"
+                android:layout_height="70dp"
+                android:padding="1dp"
                 android:id="@+id/img_profile"
                 android:src="@drawable/person_1"/>
             <TextView

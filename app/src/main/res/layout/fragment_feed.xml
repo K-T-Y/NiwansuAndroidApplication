@@ -89,8 +89,8 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/Doctor1"
-                        android:layout_width="200dp"
-                        android:layout_height="120dp"
+                        android:layout_width="250dp"
+                        android:layout_height="150dp"
                         android:layout_rowWeight="1"
                         android:layout_columnWeight="1"
                         app:cardCornerRadius="15dp">
@@ -107,7 +107,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:paddingHorizontal="5dp"
-                            android:background="@drawable/person_1"
+                            android:background="@drawable/feed1"
                             android:layout_above="@+id/txt1"
                             android:orientation="vertical"
                             app:cardCornerRadius="45dp" />
@@ -126,8 +126,8 @@
                     </androidx.cardview.widget.CardView>
                     <androidx.cardview.widget.CardView
                         android:id="@+id/Doctor2"
-                        android:layout_width="200dp"
-                        android:layout_height="120dp"
+                        android:layout_width="250dp"
+                        android:layout_height="150dp"
                         app:cardCornerRadius="15dp">
 
                         <RelativeLayout
@@ -137,7 +137,7 @@
                                 android:id="@+id/lL2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/person_1"
+                                android:background="@drawable/feed2"
                                 android:layout_above="@+id/txt2"
                                 android:orientation="vertical"
                                 app:cardCornerRadius="45dp" />
@@ -156,8 +156,8 @@
                     </androidx.cardview.widget.CardView>
                     <androidx.cardview.widget.CardView
                         android:id="@+id/Doctor3"
-                        android:layout_width="200dp"
-                        android:layout_height="120dp"
+                        android:layout_width="250dp"
+                        android:layout_height="150dp"
                         android:padding="10dp"
                         app:cardCornerRadius="15dp">
 
@@ -170,7 +170,7 @@
                                 android:id="@+id/lL3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/person_1"
+                                android:background="@drawable/feed3"
                                 android:layout_above="@+id/txt3"
                                 android:orientation="vertical"
                                 app:cardCornerRadius="45dp" />
@@ -189,8 +189,8 @@
                     </androidx.cardview.widget.CardView>
                     <androidx.cardview.widget.CardView
                         android:id="@+id/Doctor4"
-                        android:layout_width="200dp"
-                        android:layout_height="120dp"
+                        android:layout_width="250dp"
+                        android:layout_height="150dp"
                         app:cardCornerRadius="15dp">
 
                         <RelativeLayout
@@ -200,7 +200,7 @@
                                 android:id="@+id/lL4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/person_1"
+                                android:background="@drawable/feed4"
                                 android:layout_above="@+id/txt4"
                                 android:orientation="vertical"
                                 app:cardCornerRadius="45dp" />
@@ -217,8 +217,8 @@
                     </androidx.cardview.widget.CardView>
                     <androidx.cardview.widget.CardView
                         android:id="@+id/Doctor5"
-                        android:layout_width="200dp"
-                        android:layout_height="120dp"
+                        android:layout_width="250dp"
+                        android:layout_height="150dp"
                         app:cardCornerRadius="15dp">
 
                         <RelativeLayout
@@ -228,7 +228,7 @@
                                 android:id="@+id/lL5"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/person_1"
+                                android:background="@drawable/feed5"
                                 android:layout_above="@+id/txt5"
                                 android:orientation="vertical"
                                 app:cardCornerRadius="45dp" />
@@ -247,8 +247,8 @@
                     </androidx.cardview.widget.CardView>
                     <androidx.cardview.widget.CardView
                         android:id="@+id/Doctor6"
-                        android:layout_width="200dp"
-                        android:layout_height="120dp"
+                        android:layout_width="250dp"
+                        android:layout_height="150dp"
                         app:cardCornerRadius="15dp">
 
                         <RelativeLayout
@@ -258,7 +258,7 @@
                                 android:id="@+id/lL6"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/person_1"
+                                android:background="@drawable/feed6"
                                 android:layout_above="@+id/txt6"
                                 android:orientation="vertical"
                                 app:cardCornerRadius="45dp" />
@@ -288,23 +288,30 @@
     </FrameLayout>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/crd1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/fL1"
+        android:elevation="0dp"
+        android:scrollbars="none"
        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/round_layout">
+            android:elevation="0dp"
+            android:scrollbars="none"
+
+            >
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center_vertical"
+                android:gravity="center"
+                android:background="@drawable/round_layout"
                 android:layout_marginHorizontal="10dp"
+                android:paddingVertical="15dp"
                 android:text="Personalised Feed"
-                android:textColor="@color/GreenText"
                 android:textSize="24dp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -315,8 +322,8 @@
         android:id="@+id/txt7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/crd1"
+        android:layout_centerHorizontal="true"
         android:gravity="center"
         android:text="Suggeston feed will be personalized\nbased on your services "
         android:textColor="@color/purple_700"

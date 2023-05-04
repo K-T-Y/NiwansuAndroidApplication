@@ -34,7 +34,7 @@ public class LoginSelectionActivity extends AppCompatActivity {
         Signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginSelectionActivity.this, ResetPasswordActivity.class);
+                Intent intent = new Intent(LoginSelectionActivity.this, EnterDetailsActivity.class);
                 startActivity(intent);
             }
         });

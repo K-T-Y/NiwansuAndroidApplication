@@ -5,34 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="12dp"
-
     tools:context=".screens.doctor.activities.ProfileActivity">
-
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/container"
+    >
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent">
     <LinearLayout
         android:id="@+id/lL3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="vertical">
-
-        <RelativeLayout
-            android:id="@+id/cL1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/profile_pic"
-            android:padding="20dp">
-
-
-            <ImageView
-                android:id="@+id/back"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:contentDescription="TODO"
-                android:src="@drawable/icon_back"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -100,7 +90,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/lL3">
+        android:layout_below="@+id/lL3"
+        >
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -278,5 +269,6 @@
         </RelativeLayout>
 
     </ScrollView>
-
+    </LinearLayout>
+</FrameLayout>
 </RelativeLayout>

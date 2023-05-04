@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import com.example.niwansu_android_application.R;
 import com.example.niwansu_android_application.core.Constants;
+import com.example.niwansu_android_application.screens.doctor.activities.ProfileActivity;
+import com.example.niwansu_android_application.screens.doctor.fragments.FeedFragment;
 import com.example.niwansu_android_application.screens.patient.fragments.CalenderFragment;
 import com.example.niwansu_android_application.screens.patient.fragments.ChatFragment;
 import com.example.niwansu_android_application.screens.patient.fragments.HomeFragment;
@@ -42,7 +44,10 @@ public class MainActivity extends AppCompatActivity {
 
     MapFragment mapFragment = new MapFragment();
 
+    FeedFragment feedFragment = new FeedFragment();
     ChatFragment chatFragment = new ChatFragment();
+
+    ProfileActivity profileActivity = new ProfileActivity();
 
     public static MainActivity sInstance;
 
@@ -73,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                     case R.id.socialmedia:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, socialMediaFragment).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container, feedFragment).commit();
                         return;
 
 
@@ -97,6 +102,8 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
         });
+
+
 
 
     }

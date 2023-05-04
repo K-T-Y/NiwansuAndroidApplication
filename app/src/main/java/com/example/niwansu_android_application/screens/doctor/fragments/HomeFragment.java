@@ -69,14 +69,7 @@ RecyclerView storyRV;
             Bitmap decodedByte = BitmapFactory.decodeByteArray(imgdate, 0, imgdate.length);
             pro_pic.setImageBitmap(decodedByte);
         }
-        pro_pic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(getActivity(), ProfileActivity.class);
-                intent.addFlags((Intent.FLAG_ACTIVITY_NEW_TASK));
-                startActivity(intent);
-            }
-        });
+
         return view;
     }
     private void get_all_stories() {

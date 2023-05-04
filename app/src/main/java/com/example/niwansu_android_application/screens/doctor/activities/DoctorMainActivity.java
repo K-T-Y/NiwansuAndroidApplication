@@ -26,6 +26,8 @@ public class DoctorMainActivity extends AppCompatActivity {
 
     DoctorChatFragment doctorChatFragment=new DoctorChatFragment();
 
+    ProfileActivity profileActivity = new ProfileActivity();
+
     public static DoctorMainActivity sInstance;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,9 +67,9 @@ public class DoctorMainActivity extends AppCompatActivity {
                         return;
 
 
-//                    case R.id.myMenu:
-//                        getSupportFragmentManager().beginTransaction().replace(R.id.container, mapFragment).commit();
-//                        return;
+                    case R.id.myMenu:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container,profileActivity ).commit();
+                        return;
 
                     case R.id.calender:
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, appointmentsFragment).commit();

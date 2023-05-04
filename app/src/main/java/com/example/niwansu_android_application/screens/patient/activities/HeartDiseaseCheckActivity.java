@@ -135,15 +135,15 @@ public class HeartDiseaseCheckActivity extends AppCompatActivity implements View
                     currentQuestionIndex++;
                     loadNewQuestion();
                 } else if (selectedAnswer.equals(QuizHeartDiseaseClass.Answer2[currentQuestionIndex])) {
-                    score = new Integer(score + 1);
-                    currentQuestionIndex++;
-                    loadNewQuestion();
-                } else if (selectedAnswer.equals(QuizHeartDiseaseClass.Answer3[currentQuestionIndex])) {
                     score = new Integer(score + 2);
                     currentQuestionIndex++;
                     loadNewQuestion();
+                } else if (selectedAnswer.equals(QuizHeartDiseaseClass.Answer3[currentQuestionIndex])) {
+                    score = new Integer(score + 4);
+                    currentQuestionIndex++;
+                    loadNewQuestion();
                 } else if (selectedAnswer.equals(QuizHeartDiseaseClass.Answer4[currentQuestionIndex])) {
-                    score = new Integer(score + 3);
+                    score = new Integer(score + 5);
                     currentQuestionIndex++;
                     loadNewQuestion();
                 } else if (selectedAnswer.equals("")) {
@@ -187,10 +187,10 @@ public class HeartDiseaseCheckActivity extends AppCompatActivity implements View
 
     void finishQuiz() {
         if (score < 10) {
-            questionTextView.setText("Your Score is " + score);
+            questionTextView.setText("Your Score is " + score+" and you don't have to worry about having Heart Disease");
         }else if (score <=20)
         {
-            questionTextView.setText("Your Score is " + score+ " You have a slight chance of having Heart disease");
+            questionTextView.setText("Your Score is " + score+ " You have a slight chance of having Heart disease. \n Make sure to channel one of our doctors as soon as possible");
         } else if (score<=30) {
             questionTextView.setText("Your Score is " + score+ " You have a over 75% chance of having Heart disease.\n Make sure to channel one of our doctors as soon as possible");
         }

@@ -73,6 +73,8 @@ public class AdapterPatientAppointments extends RecyclerView.Adapter <AdapterPat
                 holder.btn_reject.setVisibility(View.INVISIBLE);
                 holder.btn_accept.setVisibility(View.INVISIBLE);
                 holder.spin_time.setVisibility(View.INVISIBLE);
+                holder.spinnerView.setVisibility(View.GONE);
+                holder.spinnerView.setVisibility(View.GONE);
                 holder.btn_video.setVisibility(View.INVISIBLE);
 
             }
@@ -81,7 +83,8 @@ public class AdapterPatientAppointments extends RecyclerView.Adapter <AdapterPat
                 holder.btn_reject.setVisibility(View.GONE);
                 holder.btn_accept.setVisibility(View.GONE);
                 holder.btn_video.setVisibility(View.GONE);
-                 holder.spin_time.setVisibility(View.INVISIBLE);
+                 holder.spin_time.setVisibility(View.GONE);
+                 holder.spinnerView.setVisibility(View.GONE);
                  holder.btn_video_patient.setVisibility(View.GONE);
              }
             else
@@ -90,10 +93,8 @@ public class AdapterPatientAppointments extends RecyclerView.Adapter <AdapterPat
                 holder.btn_reject.setVisibility(View.GONE);
                 holder.btn_accept.setVisibility(View.GONE);
                 holder.btn_video_patient.setVisibility(View.GONE);
-                holder.spin_time.setVisibility(View.GONE);
-
                 holder.btn_video.setVisibility(View.GONE);
-                holder.time.setVisibility(View.INVISIBLE);
+
             }
         }
         else {
@@ -104,6 +105,7 @@ public class AdapterPatientAppointments extends RecyclerView.Adapter <AdapterPat
                 holder.btn_reject.setVisibility(View.GONE);
                 holder.btn_accept.setVisibility(View.GONE);
                 holder.spin_time.setVisibility(View.GONE);
+                holder.spinnerView.setVisibility(View.GONE);
               //  holder.btn_video.setVisibility(View.GONE);
                 holder.btn_video_patient.setVisibility(View.GONE);
 
@@ -115,6 +117,7 @@ public class AdapterPatientAppointments extends RecyclerView.Adapter <AdapterPat
                 holder.btn_video.setVisibility(View.GONE);
                 holder.btn_video_patient.setVisibility(View.GONE);
                 holder.spin_time.setVisibility(View.GONE);
+                holder.spinnerView.setVisibility(View.GONE);
             }
             else
             {
@@ -123,6 +126,7 @@ public class AdapterPatientAppointments extends RecyclerView.Adapter <AdapterPat
                 holder.btn_accept.setVisibility(View.GONE);
                 holder.btn_video.setVisibility(View.GONE);
                 holder.spin_time.setVisibility(View.GONE);
+                holder.spinnerView.setVisibility(View.GONE);
 
             }
         }
@@ -227,7 +231,7 @@ holder.btn_accept.setOnClickListener(new View.OnClickListener() {
         return appointments.size();
     }
     public class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView appointmentNo,Date,doctor,time,status;
+        TextView appointmentNo,Date,doctor,time,status,spinnerView,timeview;
         Button btn_video,btn_accept,btn_reject,btn_video_patient;
         Spinner spin_time;
         public MyViewHolder(@NonNull View itemView) {
@@ -238,11 +242,12 @@ holder.btn_accept.setOnClickListener(new View.OnClickListener() {
             time = itemView.findViewById(R.id.time);
             status = itemView.findViewById(R.id.status);
             spin_time=itemView.findViewById(R.id.spin_time);
+            spinnerView = itemView.findViewById(R.id.SpinnerView);
             btn_accept=itemView.findViewById(R.id.btn_accept);
             btn_reject=itemView.findViewById(R.id.btn_reject);
             btn_video=itemView.findViewById(R.id.btn_video);
             btn_video_patient=itemView.findViewById(R.id.btn_video_patient);
-
+            timeview=itemView.findViewById(R.id.timeView);
         }
 
 

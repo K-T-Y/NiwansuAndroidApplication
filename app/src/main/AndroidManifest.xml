@@ -50,9 +50,7 @@
         <activity
             android:name=".screens.patient.activities.BookDoctorActivity"
             android:exported="false" />
-        <activity
-            android:name=".screens.doctor.activities.ProfileActivity"
-            android:exported="false" />
+
         <activity
             android:name=".screens.doctor.activities.DoctorMainActivity"
             android:exported="false" />
@@ -61,9 +59,6 @@
             android:exported="true" />
         <activity
             android:name=".screens.patient.activities.EnterDetailsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".screens.patient.activities.ResetPasswordActivity"
             android:exported="false" />
         <activity
             android:name=".screens.patient.activities.SplashScreenActivity"
