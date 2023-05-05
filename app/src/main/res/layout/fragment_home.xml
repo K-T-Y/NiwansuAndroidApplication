@@ -413,24 +413,13 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="5dp"
                     android:fontFamily="serif"
-                    android:text="Top Doctors"
+                    android:text="Book an Appointment"
                     android:textColor="#4C7375"
                     android:textSize="18sp"
                     android:textStyle="normal"
 
                     />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:fontFamily="serif"
-                    android:text="Book an Appointment"
-                    android:textColor="#4C7375"
-                    android:textSize="14sp"
-                    android:textStyle="normal"
 
-                    />
 
 
                 <FrameLayout

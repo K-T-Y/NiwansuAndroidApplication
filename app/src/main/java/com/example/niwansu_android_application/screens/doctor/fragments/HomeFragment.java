@@ -25,6 +25,7 @@ import com.example.niwansu_android_application.core.HorizontalUserModel;
 import com.example.niwansu_android_application.core.NetworkClient;
 import com.example.niwansu_android_application.core.NetworkService;
 import com.example.niwansu_android_application.core.Users;
+import com.example.niwansu_android_application.screens.doctor.activities.ProfileFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +44,8 @@ CircleImageView pro_pic;
 RecyclerView storyRV;
     ArrayList<HorizontalUserModel> storyList;
     SharedPreferences sharedPreferences;
+
+    ProfileFragment profileFragment = new ProfileFragment();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -64,6 +67,16 @@ RecyclerView storyRV;
             Bitmap decodedByte = BitmapFactory.decodeByteArray(imgdate, 0, imgdate.length);
             pro_pic.setImageBitmap(decodedByte);
         }
+
+        pro_pic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, profileFragment).commit();
+                return;
+            }
+        });
+
 
         return view;
     }

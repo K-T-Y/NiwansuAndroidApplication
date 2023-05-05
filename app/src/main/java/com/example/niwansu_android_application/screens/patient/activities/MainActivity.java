@@ -71,19 +71,13 @@ public class MainActivity extends AppCompatActivity {
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
                         return;
 
-
                     case R.id.socialmedia:
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, feedFragment).commit();
                         return;
 
-
                     case R.id.chat:
-
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, chatFragment).commit();
-
-
                         return;
-
 
                     case R.id.map:
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, mapFragment).commit();
@@ -92,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.calender:
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, calenderFragment).commit();
                         return;
-
                 }
                 return;
             }
