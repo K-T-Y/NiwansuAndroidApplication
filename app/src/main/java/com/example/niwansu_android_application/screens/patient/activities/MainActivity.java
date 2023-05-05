@@ -3,16 +3,13 @@ package com.example.niwansu_android_application.screens.patient.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.niwansu_android_application.R;
-import com.example.niwansu_android_application.core.Constants;
-import com.example.niwansu_android_application.screens.doctor.activities.ProfileActivity;
+import com.example.niwansu_android_application.screens.doctor.activities.ProfileFragment;
 import com.example.niwansu_android_application.screens.doctor.fragments.FeedFragment;
 import com.example.niwansu_android_application.screens.patient.fragments.CalenderFragment;
 import com.example.niwansu_android_application.screens.patient.fragments.ChatFragment;
@@ -23,8 +20,6 @@ import com.example.niwansu_android_application.screens.patient.fragments.SocialM
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.zegocloud.zimkit.services.ZIMKit;
-
-import im.zego.zim.enums.ZIMErrorCode;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -47,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     FeedFragment feedFragment = new FeedFragment();
     ChatFragment chatFragment = new ChatFragment();
 
-    ProfileActivity profileActivity = new ProfileActivity();
+    ProfileFragment profileActivity = new ProfileFragment();
 
     public static MainActivity sInstance;
 

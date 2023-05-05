@@ -844,7 +844,7 @@
                                             android:layout_width="65dp"
                                             android:layout_height="30dp"
                                             android:gravity="center"
-                                            android:text="Dental"
+                                            android:text="Heart"
                                             android:textStyle="bold"
 
                                             />

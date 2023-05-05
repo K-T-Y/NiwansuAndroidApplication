@@ -3,7 +3,6 @@ package com.example.niwansu_android_application.screens.doctor.activities;
 import static android.content.Context.MODE_PRIVATE;
 import static com.example.niwansu_android_application.core.Constants.PREFERENCE_NAME;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
@@ -24,7 +23,7 @@ import com.example.niwansu_android_application.screens.patient.activities.Update
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class ProfileActivity extends Fragment {
+public class ProfileFragment extends Fragment {
     TextView txt_name, txt_spec, txt_phone, txt_email, txt_update;
     SharedPreferences sharedPreferences;
     CircleImageView profile_pic;
@@ -35,12 +34,12 @@ public class ProfileActivity extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                 Bundle savedInstanceState) {
-        view= inflater.inflate(R.layout.activity_profile, container, false);
+        view= inflater.inflate(R.layout.fragment_profile, container, false);
       //view. setContentView(R.layout.activity_profile);
         sharedPreferences =this.getActivity().getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
         txt_name =view.findViewById(R.id.txt_name);
         back = view.findViewById(R.id.back);
-//        txt_spec=findViewById(R.id.txt_spec);
+//      txt_spec=findViewById(R.id.txt_spec);
         txt_phone = view.findViewById(R.id.txt_phone);
         txt_email = view.findViewById(R.id.txt_email);
         profile_pic = view.findViewById(R.id.profile_pic);
@@ -63,7 +62,7 @@ public class ProfileActivity extends Fragment {
         }
 
         txt_email.setText(sharedPreferences.getString(Constants.KEY_EMAIL, null));
-        txt_name.setText("Dr." + sharedPreferences.getString(Constants.KEY_FIRST_NAME, null) + " " + sharedPreferences.getString(Constants.KEY_LAST_NAME, null));
+        txt_name.setText("" + sharedPreferences.getString(Constants.KEY_FIRST_NAME, null) + " " + sharedPreferences.getString(Constants.KEY_LAST_NAME, null));
         txt_phone.setText(sharedPreferences.getString(Constants.KEY_MOBILE, null));
 //        txt_spec.setVisibility(View.GONE);
 //        back.setOnClickListener(new View.OnClickListener() {

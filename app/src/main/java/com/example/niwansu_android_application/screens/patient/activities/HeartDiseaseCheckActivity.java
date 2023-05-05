@@ -108,7 +108,15 @@ public class HeartDiseaseCheckActivity extends AppCompatActivity implements View
                 finish();
             }
         });
-
+        taketodoctor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HeartDiseaseCheckActivity.this, BookDoctorActivity.class);
+                intent.putExtra("DoctorName", "Dr.Mahesh Pathirana");
+                intent.putExtra("DocImage", R.drawable.doctor1);
+                startActivity(intent);
+            }
+        });
     }
 
 

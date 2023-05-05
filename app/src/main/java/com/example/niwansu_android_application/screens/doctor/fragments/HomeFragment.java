@@ -1,12 +1,8 @@
 package com.example.niwansu_android_application.screens.doctor.fragments;
 
 import static android.content.Context.MODE_PRIVATE;
-import static com.example.niwansu_android_application.core.Constants.KEY_FIRST_NAME;
-import static com.example.niwansu_android_application.core.Constants.KEY_LAST_NAME;
-import static com.example.niwansu_android_application.core.Constants.KEY_PROFILE_PIC;
 import static com.example.niwansu_android_application.core.Constants.PREFERENCE_NAME;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -29,7 +25,6 @@ import com.example.niwansu_android_application.core.HorizontalUserModel;
 import com.example.niwansu_android_application.core.NetworkClient;
 import com.example.niwansu_android_application.core.NetworkService;
 import com.example.niwansu_android_application.core.Users;
-import com.example.niwansu_android_application.screens.doctor.activities.ProfileActivity;
 
 import java.util.ArrayList;
 import java.util.List;

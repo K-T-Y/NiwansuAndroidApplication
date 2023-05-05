@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="12dp"
-    tools:context=".screens.doctor.activities.ProfileActivity">
+    tools:context=".screens.doctor.activities.ProfileFragment">
 <FrameLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -76,14 +76,7 @@
             android:layout_height="wrap_content"
 
 
-            app:contentPadding="12dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Dr. Sanath is a member of a limited group of board certified ophthalmologists with an additional subspecialty training in Oculofacial Plastic and Reconstructive Surgery, also known as Oculoplastic Surgery." />
-        </androidx.cardview.widget.CardView>
+            app:contentPadding="12dp"/>
 
     </LinearLayout>
 
@@ -91,6 +84,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/lL3"
+
         >
 
         <RelativeLayout
@@ -100,46 +94,9 @@
             >
 
             <androidx.cardview.widget.CardView
-
-                android:id="@+id/crd1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                app:cardBackgroundColor="@color/purple_500"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="5dp"
-                app:contentPadding="12dp">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:text="My Patient List"
-                        android:layout_centerVertical="true"
-                        android:textColor="@color/black"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:text="Update Record"
-                        android:layout_centerVertical="true"
-                        android:textColor="@color/black"
-                        android:textStyle="bold" />
-                </RelativeLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
                 android:id="@+id/crd2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/crd1"
                 android:layout_marginTop="15dp"
                 app:cardBackgroundColor="@color/purple_500"
                 app:cardCornerRadius="15dp"

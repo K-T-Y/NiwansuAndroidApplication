@@ -109,6 +109,16 @@ public class KidneyDiseaseCheckActivity extends AppCompatActivity implements Vie
                 finish();
             }
         });
+        taketodoctor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(KidneyDiseaseCheckActivity.this, BookDoctorActivity.class);
+                intent.putExtra("DoctorName", "Dr.Anjela Colonne");
+                intent.putExtra("DocImage", R.drawable.doctor1);
+                startActivity(intent);
+            }
+        });
+
 
     }
 

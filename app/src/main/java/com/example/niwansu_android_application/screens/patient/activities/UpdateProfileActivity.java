@@ -14,14 +14,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.niwansu_android_application.R;
-import com.example.niwansu_android_application.core.AppointmentsList;
 import com.example.niwansu_android_application.core.Constants;
 import com.example.niwansu_android_application.core.NetworkClient;
 import com.example.niwansu_android_application.core.NetworkService;
 import com.example.niwansu_android_application.models.changeStatusModel;
-import com.example.niwansu_android_application.screens.doctor.activities.ProfileActivity;
-
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;

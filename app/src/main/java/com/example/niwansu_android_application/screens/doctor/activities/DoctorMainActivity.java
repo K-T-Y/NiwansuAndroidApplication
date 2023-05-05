@@ -14,7 +14,6 @@ import com.example.niwansu_android_application.screens.doctor.fragments.Appointm
 import com.example.niwansu_android_application.screens.doctor.fragments.DoctorChatFragment;
 import com.example.niwansu_android_application.screens.doctor.fragments.FeedFragment;
 import com.example.niwansu_android_application.screens.doctor.fragments.HomeFragment;
-import com.example.niwansu_android_application.screens.patient.activities.MainActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.zegocloud.zimkit.services.ZIMKit;
@@ -26,7 +25,7 @@ public class DoctorMainActivity extends AppCompatActivity {
 
     DoctorChatFragment doctorChatFragment=new DoctorChatFragment();
 
-    ProfileActivity profileActivity = new ProfileActivity();
+    ProfileFragment profileActivity = new ProfileFragment();
 
     public static DoctorMainActivity sInstance;
     @Override
