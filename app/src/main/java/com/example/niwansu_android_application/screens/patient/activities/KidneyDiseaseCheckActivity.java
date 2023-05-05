@@ -23,14 +23,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class KidneyDiseaseCheckActivity extends AppCompatActivity implements View.OnClickListener{
+public class KidneyDiseaseCheckActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     TextView userid, questionTextView, depressiontype;
 
     androidx.appcompat.widget.AppCompatRadioButton ansA, ansB, ansC, ansD;
     ImageView imgBack;
-    Button  submitBtn, btn_restart, SeeResults;
+    Button submitBtn, btn_restart, SeeResults, taketodoctor;
 
     int currentQuestionIndex, score = 0;
     SharedPreferences sharedPreferences;
@@ -41,6 +41,7 @@ public class KidneyDiseaseCheckActivity extends AppCompatActivity implements Vie
     String todaydate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
     RelativeLayout layout;
     String selectedAnswer = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +53,7 @@ public class KidneyDiseaseCheckActivity extends AppCompatActivity implements Vie
         depressiontype = findViewById(R.id.Depressiontype);
         SeeResults = findViewById(R.id.btnSeeResults);
         SeeResults.setVisibility(View.INVISIBLE);
-
+        taketodoctor = findViewById(R.id.btnTakeToDoctor);
 
         /* Get user details using shared preferances*/
         sharedPreferences = getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
@@ -60,11 +61,6 @@ public class KidneyDiseaseCheckActivity extends AppCompatActivity implements Vie
         String Depressiontype = sharedPreferences.getString(KEY_DEPRESSION_TYPE, null);
         userid.setText(id);
         depressiontype.setText(Depressiontype);
-
-
-
-
-
 
 
         questionTextView = findViewById(R.id.question);
@@ -131,27 +127,26 @@ public class KidneyDiseaseCheckActivity extends AppCompatActivity implements Vie
         Button clickedButton = (Button) view;
         if (clickedButton.getId() == R.id.submit_btn) {
 
-                if (selectedAnswer.equals(QuizKidneyDiseaseClass.Answer1[currentQuestionIndex])) {
-                    score = new Integer(score + 0);
-                    currentQuestionIndex++;
-                    loadNewQuestion();
-                } else if (selectedAnswer.equals(QuizKidneyDiseaseClass.Answer2[currentQuestionIndex])) {
-                    score = new Integer(score + 2);
-                    currentQuestionIndex++;
-                    loadNewQuestion();
-                } else if (selectedAnswer.equals(QuizKidneyDiseaseClass.Answer3[currentQuestionIndex])) {
-                    score = new Integer(score + 4);
-                    currentQuestionIndex++;
-                    loadNewQuestion();
-                } else if (selectedAnswer.equals(QuizKidneyDiseaseClass.Answer4[currentQuestionIndex])) {
-                    score = new Integer(score + 5);
-                    currentQuestionIndex++;
-                    loadNewQuestion();
-                } else if (selectedAnswer.equals("")) {
-                    Toast.makeText(KidneyDiseaseCheckActivity.this, "Please select an answer", Toast.LENGTH_SHORT).show();
+            if (selectedAnswer.equals(QuizKidneyDiseaseClass.Answer1[currentQuestionIndex])) {
+                score = new Integer(score + 0);
+                currentQuestionIndex++;
+                loadNewQuestion();
+            } else if (selectedAnswer.equals(QuizKidneyDiseaseClass.Answer2[currentQuestionIndex])) {
+                score = new Integer(score + 2);
+                currentQuestionIndex++;
+                loadNewQuestion();
+            } else if (selectedAnswer.equals(QuizKidneyDiseaseClass.Answer3[currentQuestionIndex])) {
+                score = new Integer(score + 4);
+                currentQuestionIndex++;
+                loadNewQuestion();
+            } else if (selectedAnswer.equals(QuizKidneyDiseaseClass.Answer4[currentQuestionIndex])) {
+                score = new Integer(score + 5);
+                currentQuestionIndex++;
+                loadNewQuestion();
+            } else if (selectedAnswer.equals("")) {
+                Toast.makeText(KidneyDiseaseCheckActivity.this, "Please select an answer", Toast.LENGTH_SHORT).show();
 
-                }
-
+            }
 
 
         } else {
@@ -194,12 +189,15 @@ public class KidneyDiseaseCheckActivity extends AppCompatActivity implements Vie
     void finishQuiz() {
 
         if (score < 10) {
-            questionTextView.setText("Your Score is " + score+" and you don't have to worry about having Kidney Disease");
-        }else if (score <=20)
-        {
-            questionTextView.setText("Your Score is " + score+ " You have a slight chance of having kidney disease.\n Make sure to channel one of our doctors as soon as possible");
-        } else if (score<=30) {
-            questionTextView.setText("Your Score is " + score+ " You have a over 75% chance of having kidney disease.\n Make sure to channel one of our doctors as soon as possible");
+            questionTextView.setTextSize(16);
+            questionTextView.setText("Your Score is " + score + " and you don't have to worry about having Kidney Disease");
+        } else if (score <= 20) {
+            questionTextView.setTextSize(16);
+            questionTextView.setText("Your Score is " + score + " You have a slight chance of having kidney disease.\nWe have specialist who are excellent in this area.\n make sure to take a look.");
+        } else if (score <= 30) {
+            questionTextView.setTextSize(16);
+            taketodoctor.setVisibility(View.VISIBLE);
+            questionTextView.setText("Your Score is " + score + " You have a over 75% chance of having kidney disease.\n  Make sure to channel one of our doctors as soon as possible\n\n Please click button below and we will take you to specialists who are available now for you to channel");
         }
 
         ansA.setVisibility(View.INVISIBLE);
@@ -207,7 +205,7 @@ public class KidneyDiseaseCheckActivity extends AppCompatActivity implements Vie
         ansC.setVisibility(View.INVISIBLE);
         ansD.setVisibility(View.INVISIBLE);
         btn_restart.setVisibility(View.INVISIBLE);
-      //  uploadDataset();
+        //  uploadDataset();
 
     }
 

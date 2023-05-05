@@ -22,14 +22,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class DiabetesCheckActivity extends AppCompatActivity implements View.OnClickListener{
+public class DiabetesCheckActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     TextView userid, questionTextView, depressiontype;
 
     androidx.appcompat.widget.AppCompatRadioButton ansA, ansB, ansC, ansD;
     ImageView imgBack;
-    Button  submitBtn, btn_restart, SeeResults;
+    Button submitBtn, btn_restart, SeeResults, taketodoctor;
 
     int currentQuestionIndex, score = 0;
     SharedPreferences sharedPreferences;
@@ -40,6 +40,7 @@ public class DiabetesCheckActivity extends AppCompatActivity implements View.OnC
     String todaydate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
     RelativeLayout layout;
     String selectedAnswer = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +52,7 @@ public class DiabetesCheckActivity extends AppCompatActivity implements View.OnC
         depressiontype = findViewById(R.id.Depressiontype);
         SeeResults = findViewById(R.id.btnSeeResults);
         SeeResults.setVisibility(View.INVISIBLE);
-
+        taketodoctor = findViewById(R.id.btnTakeToDoctor);
 
         /* Get user details using shared preferances*/
         sharedPreferences = getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
@@ -59,11 +60,6 @@ public class DiabetesCheckActivity extends AppCompatActivity implements View.OnC
         String Depressiontype = sharedPreferences.getString(KEY_DEPRESSION_TYPE, null);
         userid.setText(id);
         depressiontype.setText(Depressiontype);
-
-
-
-
-
 
 
         questionTextView = findViewById(R.id.question);
@@ -89,6 +85,7 @@ public class DiabetesCheckActivity extends AppCompatActivity implements View.OnC
             @Override
             public void onClick(View view) {
                 DiabetesCheckActivity.super.onBackPressed();
+                finish();
             }
         });
         btn_restart.setOnClickListener(new View.OnClickListener() {
@@ -113,6 +110,16 @@ public class DiabetesCheckActivity extends AppCompatActivity implements View.OnC
             }
         });
 
+        taketodoctor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DiabetesCheckActivity.this, BookDoctorActivity.class);
+                intent.putExtra("DoctorName", "Dr.Vihara Pathirage");
+                intent.putExtra("DocImage", R.drawable.doctor1);
+                startActivity(intent);
+            }
+        });
+
     }
 
 
@@ -130,27 +137,26 @@ public class DiabetesCheckActivity extends AppCompatActivity implements View.OnC
         Button clickedButton = (Button) view;
         if (clickedButton.getId() == R.id.submit_btn) {
 
-                if (selectedAnswer.equals(QuizDiabetesClass.Answer1[currentQuestionIndex])) {
-                    score = new Integer(score + 0);
-                    currentQuestionIndex++;
-                    loadNewQuestion();
-                } else if (selectedAnswer.equals(QuizDiabetesClass.Answer2[currentQuestionIndex])) {
-                    score = new Integer(score + 2);
-                    currentQuestionIndex++;
-                    loadNewQuestion();
-                } else if (selectedAnswer.equals(QuizDiabetesClass.Answer3[currentQuestionIndex])) {
-                    score = new Integer(score + 3);
-                    currentQuestionIndex++;
-                    loadNewQuestion();
-                } else if (selectedAnswer.equals(QuizDiabetesClass.Answer4[currentQuestionIndex])) {
-                    score = new Integer(score + 5);
-                    currentQuestionIndex++;
-                    loadNewQuestion();
-                } else if (selectedAnswer.equals("")) {
-                    Toast.makeText(DiabetesCheckActivity.this, "Please select an answer", Toast.LENGTH_SHORT).show();
+            if (selectedAnswer.equals(QuizDiabetesClass.Answer1[currentQuestionIndex])) {
+                score = new Integer(score + 0);
+                currentQuestionIndex++;
+                loadNewQuestion();
+            } else if (selectedAnswer.equals(QuizDiabetesClass.Answer2[currentQuestionIndex])) {
+                score = new Integer(score + 2);
+                currentQuestionIndex++;
+                loadNewQuestion();
+            } else if (selectedAnswer.equals(QuizDiabetesClass.Answer3[currentQuestionIndex])) {
+                score = new Integer(score + 3);
+                currentQuestionIndex++;
+                loadNewQuestion();
+            } else if (selectedAnswer.equals(QuizDiabetesClass.Answer4[currentQuestionIndex])) {
+                score = new Integer(score + 5);
+                currentQuestionIndex++;
+                loadNewQuestion();
+            } else if (selectedAnswer.equals("")) {
+                Toast.makeText(DiabetesCheckActivity.this, "Please select an answer", Toast.LENGTH_SHORT).show();
 
-                }
-
+            }
 
 
         } else {
@@ -187,12 +193,16 @@ public class DiabetesCheckActivity extends AppCompatActivity implements View.OnC
 
     void finishQuiz() {
         if (score < 10) {
-            questionTextView.setText("Your Score is " + score+" and you don't have to worry about having Diabetes");
-        }else if (score <=20)
-        {
-            questionTextView.setText("Your Score is " + score+ " You have a slight chance of having Diabetes.\n Make sure to channel one of our doctors as soon as possible");
-        } else if (score<=30) {
-            questionTextView.setText("Your Score is " + score+ " You have a over 75% chance of having diabetes.\n Make sure to channel one of our doctors as soon as possible");
+            questionTextView.setTextSize(16);
+            questionTextView.setText("Your Score is " + score + " and you don't have to worry about having Diabetes");
+        } else if (score <= 20) {
+            questionTextView.setTextSize(16);
+            questionTextView.setText("Your Score is " + score + " You have a slight chance of having Diabetes.\n We have specialist who are excellent in this area.\n make sure to take a look.");
+        } else if (score <= 30) {
+            questionTextView.setTextSize(16);
+            questionTextView.setText("Your Score is " + score + ".You have over 75% chance of having diabetes.\n Make sure to channel one of our doctors as soon as possible\n\n Please click button below and we will take you to specialists who are available now for you to channel");
+            taketodoctor.setVisibility(View.VISIBLE);
+
         }
 
 
@@ -201,7 +211,7 @@ public class DiabetesCheckActivity extends AppCompatActivity implements View.OnC
         ansC.setVisibility(View.INVISIBLE);
         ansD.setVisibility(View.INVISIBLE);
         btn_restart.setVisibility(View.INVISIBLE);
-      //  uploadDataset();
+        //  uploadDataset();
 
     }
 

@@ -23,14 +23,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class ChronicRespitoryDiseaseCheckActivity extends AppCompatActivity implements View.OnClickListener{
+public class ChronicRespitoryDiseaseCheckActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     TextView userid, questionTextView, depressiontype;
 
     androidx.appcompat.widget.AppCompatRadioButton ansA, ansB, ansC, ansD;
     ImageView imgBack;
-    Button  submitBtn, btn_restart, SeeResults;
+    Button submitBtn, btn_restart, SeeResults, taketodoc;
 
     int currentQuestionIndex, score = 0;
     SharedPreferences sharedPreferences;
@@ -41,6 +41,7 @@ public class ChronicRespitoryDiseaseCheckActivity extends AppCompatActivity impl
     String todaydate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
     RelativeLayout layout;
     String selectedAnswer = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +53,7 @@ public class ChronicRespitoryDiseaseCheckActivity extends AppCompatActivity impl
         depressiontype = findViewById(R.id.Depressiontype);
         SeeResults = findViewById(R.id.btnSeeResults);
         SeeResults.setVisibility(View.INVISIBLE);
+        taketodoc = findViewById(R.id.btnTakeToDoctor);
 
 
         /* Get user details using shared preferances*/
@@ -60,11 +62,6 @@ public class ChronicRespitoryDiseaseCheckActivity extends AppCompatActivity impl
         String Depressiontype = sharedPreferences.getString(KEY_DEPRESSION_TYPE, null);
         userid.setText(id);
         depressiontype.setText(Depressiontype);
-
-
-
-
-
 
 
         questionTextView = findViewById(R.id.question);
@@ -113,6 +110,15 @@ public class ChronicRespitoryDiseaseCheckActivity extends AppCompatActivity impl
                 finish();
             }
         });
+        taketodoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ChronicRespitoryDiseaseCheckActivity.this, BookDoctorActivity.class);
+                intent.putExtra("DoctorName", "Dr.Sachini Gallage");
+                intent.putExtra("DocImage", R.drawable.doctor4);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -131,27 +137,26 @@ public class ChronicRespitoryDiseaseCheckActivity extends AppCompatActivity impl
         Button clickedButton = (Button) view;
         if (clickedButton.getId() == R.id.submit_btn) {
 
-                if (selectedAnswer.equals(QuizChronicRepositiryDiseaseClass.Answer1[currentQuestionIndex])) {
-                    score = new Integer(score + 0);
-                    currentQuestionIndex++;
-                    loadNewQuestion();
-                } else if (selectedAnswer.equals(QuizChronicRepositiryDiseaseClass.Answer2[currentQuestionIndex])) {
-                    score = new Integer(score + 2);
-                    currentQuestionIndex++;
-                    loadNewQuestion();
-                } else if (selectedAnswer.equals(QuizChronicRepositiryDiseaseClass.Answer3[currentQuestionIndex])) {
-                    score = new Integer(score + 3);
-                    currentQuestionIndex++;
-                    loadNewQuestion();
-                } else if (selectedAnswer.equals(QuizChronicRepositiryDiseaseClass.Answer4[currentQuestionIndex])) {
-                    score = new Integer(score + 5);
-                    currentQuestionIndex++;
-                    loadNewQuestion();
-                } else if (selectedAnswer.equals("")) {
-                    Toast.makeText(ChronicRespitoryDiseaseCheckActivity.this, "Please select an answer", Toast.LENGTH_SHORT).show();
+            if (selectedAnswer.equals(QuizChronicRepositiryDiseaseClass.Answer1[currentQuestionIndex])) {
+                score = new Integer(score + 0);
+                currentQuestionIndex++;
+                loadNewQuestion();
+            } else if (selectedAnswer.equals(QuizChronicRepositiryDiseaseClass.Answer2[currentQuestionIndex])) {
+                score = new Integer(score + 2);
+                currentQuestionIndex++;
+                loadNewQuestion();
+            } else if (selectedAnswer.equals(QuizChronicRepositiryDiseaseClass.Answer3[currentQuestionIndex])) {
+                score = new Integer(score + 3);
+                currentQuestionIndex++;
+                loadNewQuestion();
+            } else if (selectedAnswer.equals(QuizChronicRepositiryDiseaseClass.Answer4[currentQuestionIndex])) {
+                score = new Integer(score + 5);
+                currentQuestionIndex++;
+                loadNewQuestion();
+            } else if (selectedAnswer.equals("")) {
+                Toast.makeText(ChronicRespitoryDiseaseCheckActivity.this, "Please select an answer", Toast.LENGTH_SHORT).show();
 
-                }
-
+            }
 
 
         } else {
@@ -189,12 +194,15 @@ public class ChronicRespitoryDiseaseCheckActivity extends AppCompatActivity impl
     void finishQuiz() {
 
         if (score < 10) {
-            questionTextView.setText("Your Score is " + score+" and you don't have to worry about having Chronic respiratory diseases ");
-        }else if (score <=20)
-        {
-            questionTextView.setText("Your Score is " + score+ " You have a slight chance of having Chronic respiratory diseases\n Make sure to channel one of our doctor as soon as possible");
-        } else if (score<=30) {
-            questionTextView.setText("Your Score is " + score+ " You have a over 75% chance of having Chronic respiratory diseases.\n Make sure to channel one of our doctor as soon as possible");
+            questionTextView.setText("Your Score is " + score + " and you don't have to worry about having Chronic respiratory diseases ");
+            questionTextView.setTextSize(16);
+        } else if (score <= 20) {
+            questionTextView.setText("Your Score is " + score + " You have a slight chance of having Chronic respiratory diseases\n  We have specialist who are excellent in this area.\n make sure to take a look.");
+            questionTextView.setTextSize(16);
+        } else if (score <= 30) {
+            questionTextView.setText("Your Score is " + score + " You have a over 75% chance of having Chronic respiratory diseases.\n Make sure to channel one of our doctors as soon as possible\n\n Please click button below and we will take you to specialists who are available now for you to channel");
+            questionTextView.setTextSize(16);
+            taketodoc.setVisibility(View.VISIBLE);
         }
 
         ansA.setVisibility(View.INVISIBLE);
@@ -202,7 +210,7 @@ public class ChronicRespitoryDiseaseCheckActivity extends AppCompatActivity impl
         ansC.setVisibility(View.INVISIBLE);
         ansD.setVisibility(View.INVISIBLE);
         btn_restart.setVisibility(View.INVISIBLE);
-      //  uploadDataset();
+        //  uploadDataset();
 
     }
 

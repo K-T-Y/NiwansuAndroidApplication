@@ -15,7 +15,7 @@ public class QuizHeartDiseaseClass {
     public static String choices[][] = {
             {"No pain","Mild pain or discomfort","Moderate pain or discomfort","Severe pain or discomfort"},
             {"No shortness of breath","Mild shortness of breath during physical activity","Moderate shortness of breath during physical activity and/or at rest","Severe shortness of breath at rest"},
-            {"No dizziness or lightheadedness","Mild dizziness or lightheadedness","Severe dizziness or lightheadedness","Almost all the time"},
+            {"No dizziness or lightheadedness","Mild dizziness or lightheadedness","Severe dizziness or lightheadedness","Severe dizziness or lightheadedness"},
             {"No fainting or loss of consciousness","Once or twice in the past","Several times in the past","Frequently or regularly"},
             {"No palpitations or irregular heartbeats","Occasional palpitations or irregular heartbeats","Frequent palpitations or irregular heartbeats","Constant or severe palpitations or irregular heartbeats"},
             {"No swelling","Mild swelling","Moderate swelling","Severe swelling or fluid accumulation"}

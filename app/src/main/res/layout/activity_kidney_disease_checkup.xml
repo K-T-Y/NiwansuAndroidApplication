@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutQuestionarie"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/layoutQuestionarie"
     android:orientation="vertical"
-    tools:context=".screens.patient.activities.DiabetesCheckActivity">
+    tools:context=".screens.patient.activities.KidneyDiseaseCheckActivity">
 
     <ImageView
         android:id="@+id/imgBack"
@@ -15,7 +15,6 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="349dp"
-
         android:outlineSpotShadowColor="@color/white"
         android:padding="5dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,6 +34,7 @@
         android:visibility="invisible"
         app:layout_constraintEnd_toStartOf="@+id/choices_layout"
         app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/Depressiontype"
         android:layout_width="0dp"
@@ -53,18 +53,13 @@
         android:id="@+id/question"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/choices_layout"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="50dp"
+        android:layout_below="@+id/imgBack"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="40dp"
         android:text="This will be the question"
         android:textAlignment="center"
-        android:textSize="23sp"
+        android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/choices_layout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgBack" />
 
 
@@ -72,16 +67,12 @@
         android:id="@+id/choices_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/question"
         android:layout_centerInParent="true"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="65dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/submit_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
 
+        android:layout_marginHorizontal="40dp"
+        android:gravity="center"
+        android:orientation="vertical">
 
 
         <androidx.appcompat.widget.AppCompatRadioButton
@@ -90,8 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/round_layout_lite_green"
-            android:text="Ans A"
-          />
+            android:text="Ans A" />
 
         <androidx.appcompat.widget.AppCompatRadioButton
             android:id="@+id/answerB"
@@ -99,8 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/round_layout_lite_green"
-            android:text="Ans B"
-           />
+            android:text="Ans B" />
 
         <androidx.appcompat.widget.AppCompatRadioButton
             android:id="@+id/answerC"
@@ -108,8 +97,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/round_layout_lite_green"
-            android:text="Ans C"
-             />
+            android:text="Ans C" />
 
         <androidx.appcompat.widget.AppCompatRadioButton
             android:id="@+id/answerD"
@@ -118,8 +106,7 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/round_layout_lite_green"
 
-            android:text="Ans D"
-             />
+            android:text="Ans D" />
 
     </RadioGroup>
 
@@ -127,19 +114,29 @@
         android:id="@+id/submit_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/choices_layout"
+        android:layout_above="@+id/btn_restart"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="7dp"
         android:background="@drawable/round_layout"
         android:text="NEXT"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/btn_restart"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textColor="@color/white" />
+
     <Button
         android:id="@+id/btnSeeResults"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_above="@+id/btn_restart"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/round_layout"
+        android:text="SEE RESULTS"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/btnTakeToDoctor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/choices_layout"
@@ -147,8 +144,9 @@
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="7dp"
         android:background="@drawable/round_layout"
-        android:text="SEE RESULTS"
+        android:text="TAKE ME TO SPECIALIST"
         android:textColor="@color/white"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/btn_restart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -158,17 +156,15 @@
         android:id="@+id/btn_restart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/choices_layout"
+        android:layout_alignParentBottom="true"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="50dp"
         android:background="@drawable/round_layout"
         android:text="RESTART"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+
+        />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

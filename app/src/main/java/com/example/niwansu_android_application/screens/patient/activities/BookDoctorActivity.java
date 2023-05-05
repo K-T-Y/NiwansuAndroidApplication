@@ -61,12 +61,36 @@ public class BookDoctorActivity extends AppCompatActivity {
 
         //set calender to hide past dates
         calendarView.setMinDate((new Date().getTime()));
+        btnBookAppointment.setVisibility(View.GONE);
 
         Intent i = getIntent();
         String DoctorName = i.getStringExtra("DoctorName");
 
         //Set Doctor Name and description
-        docDescription.setText(DoctorName + " is a member of a limited group of board certified ophthalmologists with an additional subspecialty training in Oculofacial Plastic and Reconstructive Surgery, also known  as Oculoplastic Surgery. ");
+        if (DoctorName.equals("Dr.Vihara Pathirage"))
+        {
+            docDescription.setText(DoctorName + " is a member of a limited group of board certified Endocrinologist.");
+
+        } else if (DoctorName.equals("Dr.Mahesh Pathirana")) {
+            docDescription.setText(DoctorName + " is a member of a limited group of board certified Cardiologist.");
+
+        }
+        else if (DoctorName.equals("Dr.Anjela Colonne")) {
+            docDescription.setText(DoctorName + " is a member of a limited group of board certified Nephrologist.");
+
+        }
+        else if (DoctorName.equals("Dr.Sachini Gallage")) {
+            docDescription.setText(DoctorName + " is a member of a limited group of board certified Ophthalmologist.");
+
+        }
+        else if (DoctorName.equals("Dr.Himasha Perera")) {
+            docDescription.setText(DoctorName + " is a member of a limited group of board certified Neurologist.");
+
+        }else if (DoctorName.equals("Dr.Lalani Gamage")) {
+            docDescription.setText(DoctorName + " is a member of a limited group of board certified Dermatologist.");
+
+        }
+
 
 
         //Getting Loged-in user using shared preferences
@@ -93,7 +117,7 @@ public class BookDoctorActivity extends AppCompatActivity {
             public void onSelectedDayChange(@NonNull CalendarView calendarView, int year, int month, int dayOfMonth) {
                 sd = String.format("%04d/%02d/%02d", year, month + 1, dayOfMonth);
                 // DateselectHidden.setText(sd);
-
+                btnBookAppointment.setVisibility(View.VISIBLE);
 
                 doctorcheck(DoctorName, sd);
             }
@@ -130,8 +154,6 @@ public class BookDoctorActivity extends AppCompatActivity {
         params.put("bookeddate", sd);
         params.put("time", time);
         params.put("doctorapprovalstatus", appointmentStatus);
-
-
         doctorschedule(params);
 
 

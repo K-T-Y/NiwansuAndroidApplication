@@ -124,7 +124,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), BookDoctorActivity.class);
-                intent.putExtra("DoctorName", "Dr.Udari Perera");
+                intent.putExtra("DoctorName", "Dr.Lalani Gamage");
                 intent.putExtra("DocImage", R.drawable.doctor6);
                 startActivity(intent);
             }

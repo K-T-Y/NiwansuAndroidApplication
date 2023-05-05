@@ -50,7 +50,6 @@
         <activity
             android:name=".screens.patient.activities.BookDoctorActivity"
             android:exported="false" />
-
         <activity
             android:name=".screens.doctor.activities.DoctorMainActivity"
             android:exported="false" />
