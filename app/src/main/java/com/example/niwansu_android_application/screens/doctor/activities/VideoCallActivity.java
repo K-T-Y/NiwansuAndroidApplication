@@ -34,7 +34,8 @@ public class VideoCallActivity extends AppCompatActivity {
         UserIDET.setText(userID);
 
 
-        String targetUserID = HeyUserTV.getText().toString().trim();
+     //   String targetUserID = HeyUserTV.getText().toString().trim();
+        String targetUserID = userID;
         setVideoCall(targetUserID);
         setVoiceCall(targetUserID);
 
