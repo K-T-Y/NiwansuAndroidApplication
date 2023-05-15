@@ -210,8 +210,8 @@ public class AdapterPatientAppointments extends RecyclerView.Adapter <AdapterPat
 
                 startService(patient);
                 Intent intent = new Intent(context.getApplicationContext(), VideoCallActivity.class);
-                intent.putExtra("userID",patient);
-                intent.putExtra("UserName",doctor );
+                intent.putExtra("userID",doctor);
+                intent.putExtra("UserName", patient );
                 context.startActivity(intent);
             }
         });
