@@ -193,20 +193,10 @@ public class AdapterPatientAppointments extends RecyclerView.Adapter <AdapterPat
         holder.btn_video.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-           //  String username = patientname;
-
-//                String username= appointments.get(position).getDoctorname();
-//              Toast.makeText(context, patientuserID, Toast.LENGTH_SHORT).show();
 
 
                 String patient = "patient";
                 String doctor = "doctor";
-
-
-//                if (patientuserID.isEmpty())
-//                {
-//                    return;
-//                }
 
                 startService(patient);
                 Intent intent = new Intent(context.getApplicationContext(), VideoCallActivity.class);
@@ -219,21 +209,11 @@ public class AdapterPatientAppointments extends RecyclerView.Adapter <AdapterPat
         holder.btn_video_patient.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//               String username= appointments.get(position).getDoctorname();
-//            Toast.makeText(context, username, Toast.LENGTH_SHORT).show();
-//                String UserID= appointments.get(position).getPatientname();
 
 
                 String patient = "patient";
                 String doctor = "doctor";
 
-
-
-
-//                if (UserID.isEmpty())
-//                {
-//                    return;
-//                }
                 startService(doctor);
                 Intent intent = new Intent(context.getApplicationContext(), VideoCallActivity.class);
                 intent.putExtra("userID",patient);
