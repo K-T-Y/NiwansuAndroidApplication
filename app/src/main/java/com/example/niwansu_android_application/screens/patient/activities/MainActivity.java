@@ -52,9 +52,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
+//        sInstance = this;
+//        long appId =1237621987 ;    // The AppID you get from ZEGOCLOUD Admin Console.
+//        String appSign ="b40727d97be6263d11bf3e6b1847022a036a8d9b0c3cf66a766072668cedc876" ;    // The App Sign you get from ZEGOCLOUD Admin Console.
+//        ZIMKit.initWith(getApplication(),appId,appSign);
+//        // Online notification for the initialization (use the following code if this is needed).
+//        ZIMKit.initNotifications();
+
+
         sInstance = this;
-        long appId =1237621987 ;    // The AppID you get from ZEGOCLOUD Admin Console.
-        String appSign ="b40727d97be6263d11bf3e6b1847022a036a8d9b0c3cf66a766072668cedc876" ;    // The App Sign you get from ZEGOCLOUD Admin Console.
+        long appId =76477047 ;    // The AppID you get from ZEGOCLOUD Admin Console.
+        String appSign ="b2fe26ab62fcd26ede05c1635ed448ad21b679a0a3249401812951ff06ba1dd2" ;    // The App Sign you get from ZEGOCLOUD Admin Console.
         ZIMKit.initWith(getApplication(),appId,appSign);
         // Online notification for the initialization (use the following code if this is needed).
         ZIMKit.initNotifications();

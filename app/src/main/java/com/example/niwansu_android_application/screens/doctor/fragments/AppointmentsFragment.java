@@ -65,7 +65,7 @@ public class AppointmentsFragment extends Fragment {
         calendarView = view.findViewById(R.id.calender);
 
 
-        fetchNotification();
+        fetchAppointments();
 
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
@@ -74,7 +74,7 @@ public class AppointmentsFragment extends Fragment {
                 String date = String.format("%04d/%02d/%02d", year, month + 1, dayOfMonth);
 
 
-                fetchNotificationondate(date);
+                fetchCalenderondate(date);
             }
         });
 
@@ -82,13 +82,13 @@ public class AppointmentsFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 // txtSeeAll.setBackground(Drawa);
-                fetchNotification();
+                fetchAppointments();
             }
         });
         return view;
     }
 
-    public void fetchNotification(){
+    public void fetchAppointments(){
         sharedPreferences =this.getActivity().getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
         String name = "Dr."+(sharedPreferences.getString(Constants.KEY_FIRST_NAME,null))+" "+(sharedPreferences.getString(Constants.KEY_LAST_NAME,null));
         System.out.println(name);
@@ -116,7 +116,7 @@ public class AppointmentsFragment extends Fragment {
     }
 
 
-    public void fetchNotificationondate(String date){
+    public void fetchCalenderondate(String date){
         sharedPreferences =this.getActivity().getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
         String name = "Dr."+(sharedPreferences.getString(Constants.KEY_FIRST_NAME,null))+" "+(sharedPreferences.getString(Constants.KEY_LAST_NAME,null));
 

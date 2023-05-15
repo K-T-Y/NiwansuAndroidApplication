@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +32,8 @@ public class HeartDiseaseCheckActivity extends AppCompatActivity implements View
     ImageView imgBack;
     Button submitBtn, btn_restart, SeeResults, taketodoctor;
 
+    RadioGroup radioGroup;
+
     int currentQuestionIndex, score = 0;
     SharedPreferences sharedPreferences;
     private static final String KEY_ID = "id";
@@ -53,6 +56,7 @@ public class HeartDiseaseCheckActivity extends AppCompatActivity implements View
         SeeResults = findViewById(R.id.btnSeeResults);
         SeeResults.setVisibility(View.INVISIBLE);
         taketodoctor = findViewById(R.id.btnTakeToDoctor);
+        radioGroup = findViewById(R.id.radioGroup);
 
         /* Get user details using shared preferances*/
         sharedPreferences = getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
@@ -68,7 +72,7 @@ public class HeartDiseaseCheckActivity extends AppCompatActivity implements View
         ansC = findViewById(R.id.answerC);
         ansD = findViewById(R.id.answerD);
         submitBtn = findViewById(R.id.submit_btn);
-
+        radioGroup = findViewById(R.id.radioGroup);
 
         ansA.setOnClickListener(this);
         ansB.setOnClickListener(this);
@@ -113,7 +117,7 @@ public class HeartDiseaseCheckActivity extends AppCompatActivity implements View
             public void onClick(View view) {
                 Intent intent = new Intent(HeartDiseaseCheckActivity.this, BookDoctorActivity.class);
                 intent.putExtra("DoctorName", "Dr.Mahesh Pathirana");
-                intent.putExtra("DocImage", R.drawable.doctor1);
+                intent.putExtra("DocImage", R.drawable.doctor2);
                 startActivity(intent);
             }
         });
@@ -185,7 +189,7 @@ public class HeartDiseaseCheckActivity extends AppCompatActivity implements View
         ansB.setText(QuizHeartDiseaseClass.choices[currentQuestionIndex][1]);
         ansC.setText(QuizHeartDiseaseClass.choices[currentQuestionIndex][2]);
         ansD.setText(QuizHeartDiseaseClass.choices[currentQuestionIndex][3]);
-
+        radioGroup.clearCheck();
     }
 
     void finishQuiz() {
@@ -207,6 +211,7 @@ public class HeartDiseaseCheckActivity extends AppCompatActivity implements View
         ansD.setVisibility(View.INVISIBLE);
         btn_restart.setVisibility(View.INVISIBLE);
         //  uploadDataset();
+
 
     }
 

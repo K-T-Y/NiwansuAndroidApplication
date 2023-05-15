@@ -7,11 +7,7 @@
     android:background="@color/white"
     android:orientation="vertical"
     tools:context=".screens.patient.fragments.HomeFragment">
-<androidx.cardview.widget.CardView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
 
-</androidx.cardview.widget.CardView>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -872,7 +868,7 @@
                                             android:layout_height="30dp"
 
                                             android:gravity="center"
-                                            android:text="Kedney"
+                                            android:text="Kidney"
                                             android:textStyle="bold"
 
                                             />
@@ -905,7 +901,7 @@
                                             <ImageView
                                                 android:layout_width="35dp"
                                                 android:layout_height="30dp"
-                                                android:background="@drawable/icon_chronic_disease" />
+                                                android:background="@drawable/icon_lungs" />
 
 
 
@@ -913,7 +909,7 @@
                                             android:layout_width="65dp"
                                             android:layout_height="30dp"
                                             android:gravity="center"
-                                            android:text="Eye"
+                                            android:text="CRDs"
                                             android:textStyle="bold"
 
                                             />

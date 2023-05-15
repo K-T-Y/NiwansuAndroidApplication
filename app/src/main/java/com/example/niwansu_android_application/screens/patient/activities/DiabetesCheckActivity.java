@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +32,7 @@ public class DiabetesCheckActivity extends AppCompatActivity implements View.OnC
     ImageView imgBack;
     Button submitBtn, btn_restart, SeeResults, taketodoctor;
 
+    RadioGroup radioGroup;
     int currentQuestionIndex, score = 0;
     SharedPreferences sharedPreferences;
     private static final String KEY_ID = "id";
@@ -53,6 +55,7 @@ public class DiabetesCheckActivity extends AppCompatActivity implements View.OnC
         SeeResults = findViewById(R.id.btnSeeResults);
         SeeResults.setVisibility(View.INVISIBLE);
         taketodoctor = findViewById(R.id.btnTakeToDoctor);
+        radioGroup = findViewById(R.id.radioGroup);
 
         /* Get user details using shared preferances*/
         sharedPreferences = getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
@@ -127,11 +130,7 @@ public class DiabetesCheckActivity extends AppCompatActivity implements View.OnC
     public void onClick(View view) {
 
 
-        ansA.setBackground(ContextCompat.getDrawable(this, R.drawable.round_layout_lite_green));
-        ansB.setBackground(ContextCompat.getDrawable(this, R.drawable.round_layout_lite_green));
-        ansC.setBackground(ContextCompat.getDrawable(this, R.drawable.round_layout_lite_green));
-        ansD.setBackground(ContextCompat.getDrawable(this, R.drawable.round_layout_lite_green));
-
+//
         //Validating answer selection ( User should select an answer before pressing submit button, and also user should answer all 10 questions)
 
         Button clickedButton = (Button) view;
@@ -140,18 +139,22 @@ public class DiabetesCheckActivity extends AppCompatActivity implements View.OnC
             if (selectedAnswer.equals(QuizDiabetesClass.Answer1[currentQuestionIndex])) {
                 score = new Integer(score + 0);
                 currentQuestionIndex++;
+
                 loadNewQuestion();
             } else if (selectedAnswer.equals(QuizDiabetesClass.Answer2[currentQuestionIndex])) {
                 score = new Integer(score + 2);
                 currentQuestionIndex++;
+
                 loadNewQuestion();
             } else if (selectedAnswer.equals(QuizDiabetesClass.Answer3[currentQuestionIndex])) {
                 score = new Integer(score + 3);
                 currentQuestionIndex++;
+
                 loadNewQuestion();
             } else if (selectedAnswer.equals(QuizDiabetesClass.Answer4[currentQuestionIndex])) {
                 score = new Integer(score + 5);
                 currentQuestionIndex++;
+
                 loadNewQuestion();
             } else if (selectedAnswer.equals("")) {
                 Toast.makeText(DiabetesCheckActivity.this, "Please select an answer", Toast.LENGTH_SHORT).show();
@@ -163,9 +166,9 @@ public class DiabetesCheckActivity extends AppCompatActivity implements View.OnC
             //choices button clicked
             selectedAnswer = clickedButton.getText().toString();
             // clickedButton.setBackgroundColor(Color.MAGENTA);
-            clickedButton.setBackground(ContextCompat.getDrawable(this, R.drawable.round_layout_lite_green));
 
         }
+
 
     }
 
@@ -183,11 +186,15 @@ public class DiabetesCheckActivity extends AppCompatActivity implements View.OnC
             return;
         }
 
+
         questionTextView.setText(QuizDiabetesClass.question[currentQuestionIndex]);
         ansA.setText(QuizDiabetesClass.choices[currentQuestionIndex][0]);
         ansB.setText(QuizDiabetesClass.choices[currentQuestionIndex][1]);
         ansC.setText(QuizDiabetesClass.choices[currentQuestionIndex][2]);
         ansD.setText(QuizDiabetesClass.choices[currentQuestionIndex][3]);
+        radioGroup.clearCheck();
+
+
 
     }
 
@@ -212,6 +219,7 @@ public class DiabetesCheckActivity extends AppCompatActivity implements View.OnC
         ansD.setVisibility(View.INVISIBLE);
         btn_restart.setVisibility(View.INVISIBLE);
         //  uploadDataset();
+
 
     }
 

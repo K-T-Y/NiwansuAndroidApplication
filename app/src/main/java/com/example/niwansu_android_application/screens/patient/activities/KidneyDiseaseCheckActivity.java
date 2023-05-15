@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,7 +32,7 @@ public class KidneyDiseaseCheckActivity extends AppCompatActivity implements Vie
     androidx.appcompat.widget.AppCompatRadioButton ansA, ansB, ansC, ansD;
     ImageView imgBack;
     Button submitBtn, btn_restart, SeeResults, taketodoctor;
-
+    RadioGroup radioGroup;
     int currentQuestionIndex, score = 0;
     SharedPreferences sharedPreferences;
     private static final String KEY_ID = "id";
@@ -54,6 +55,7 @@ public class KidneyDiseaseCheckActivity extends AppCompatActivity implements Vie
         SeeResults = findViewById(R.id.btnSeeResults);
         SeeResults.setVisibility(View.INVISIBLE);
         taketodoctor = findViewById(R.id.btnTakeToDoctor);
+        radioGroup = findViewById(R.id.radioGroup);
 
         /* Get user details using shared preferances*/
         sharedPreferences = getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
@@ -114,7 +116,7 @@ public class KidneyDiseaseCheckActivity extends AppCompatActivity implements Vie
             public void onClick(View view) {
                 Intent intent = new Intent(KidneyDiseaseCheckActivity.this, BookDoctorActivity.class);
                 intent.putExtra("DoctorName", "Dr.Anjela Colonne");
-                intent.putExtra("DocImage", R.drawable.doctor1);
+                intent.putExtra("DocImage", R.drawable.doctor3);
                 startActivity(intent);
             }
         });
@@ -188,11 +190,8 @@ public class KidneyDiseaseCheckActivity extends AppCompatActivity implements Vie
         ansB.setText(QuizKidneyDiseaseClass.choices[currentQuestionIndex][1]);
         ansC.setText(QuizKidneyDiseaseClass.choices[currentQuestionIndex][2]);
         ansD.setText(QuizKidneyDiseaseClass.choices[currentQuestionIndex][3]);
+        radioGroup.clearCheck();
 
-        ansA.setChecked(false);
-        ansB.setChecked(false);
-        ansC.setChecked(false);
-        ansD.setChecked(false);
 
     }
 

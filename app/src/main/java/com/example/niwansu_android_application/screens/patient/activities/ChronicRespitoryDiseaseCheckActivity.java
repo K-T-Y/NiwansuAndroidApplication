@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,6 +33,7 @@ public class ChronicRespitoryDiseaseCheckActivity extends AppCompatActivity impl
     ImageView imgBack;
     Button submitBtn, btn_restart, SeeResults, taketodoc;
 
+    RadioGroup radioGroup;
     int currentQuestionIndex, score = 0;
     SharedPreferences sharedPreferences;
     private static final String KEY_ID = "id";
@@ -54,6 +56,7 @@ public class ChronicRespitoryDiseaseCheckActivity extends AppCompatActivity impl
         SeeResults = findViewById(R.id.btnSeeResults);
         SeeResults.setVisibility(View.INVISIBLE);
         taketodoc = findViewById(R.id.btnTakeToDoctor);
+        radioGroup = findViewById(R.id.radioGroup);
 
 
         /* Get user details using shared preferances*/
@@ -188,6 +191,7 @@ public class ChronicRespitoryDiseaseCheckActivity extends AppCompatActivity impl
         ansB.setText(QuizChronicRepositiryDiseaseClass.choices[currentQuestionIndex][1]);
         ansC.setText(QuizChronicRepositiryDiseaseClass.choices[currentQuestionIndex][2]);
         ansD.setText(QuizChronicRepositiryDiseaseClass.choices[currentQuestionIndex][3]);
+        radioGroup.clearCheck();
 
     }
 
@@ -211,6 +215,7 @@ public class ChronicRespitoryDiseaseCheckActivity extends AppCompatActivity impl
         ansD.setVisibility(View.INVISIBLE);
         btn_restart.setVisibility(View.INVISIBLE);
         //  uploadDataset();
+
 
     }
 

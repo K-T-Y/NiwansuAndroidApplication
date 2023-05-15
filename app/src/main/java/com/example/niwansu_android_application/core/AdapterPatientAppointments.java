@@ -58,10 +58,13 @@ public class AdapterPatientAppointments extends RecyclerView.Adapter <AdapterPat
 
         holder.time.setText("" + appointments.get(position).getTime());
         holder.status.setText(""+appointments.get(position).getDoctorapprovalstatus());
-        String patientname = appointments.get(position).getPatientname();
+        String patientuserID = appointments.get(position).getPatientname();
+
+
         sharedPreferences =context.getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
         String category=  sharedPreferences.getString(Constants.KEY_USER_CATEGORY,null);
-        String userID=  sharedPreferences.getString(Constants.KEY_EMAIL,null);
+        String docuserID=  sharedPreferences.getString(Constants.KEY_DOCTOR_NAME,null);
+        //String  = sharedPreferences.getString(Constants.KEY_PATIENT_NAME,null);
         //String username=  sharedPreferences.getString(Constants.KEY_FIRST_NAME,null);
 
         if(category.equals("doctor"))
@@ -70,12 +73,12 @@ public class AdapterPatientAppointments extends RecyclerView.Adapter <AdapterPat
             if(appointments.get(position).getDoctorapprovalstatus().equals("Accepted"))
             {
 
-                holder.btn_reject.setVisibility(View.INVISIBLE);
-                holder.btn_accept.setVisibility(View.INVISIBLE);
-                holder.spin_time.setVisibility(View.INVISIBLE);
+                holder.btn_reject.setVisibility(View.GONE);
+                holder.btn_accept.setVisibility(View.GONE);
+                holder.spin_time.setVisibility(View.GONE);
                 holder.spinnerView.setVisibility(View.GONE);
-                holder.spinnerView.setVisibility(View.GONE);
-                holder.btn_video.setVisibility(View.INVISIBLE);
+               holder.btn_video.setVisibility(View.GONE);
+
 
             }
             else if(appointments.get(position).getDoctorapprovalstatus().equals("Rejected"))
@@ -85,29 +88,32 @@ public class AdapterPatientAppointments extends RecyclerView.Adapter <AdapterPat
                 holder.btn_video.setVisibility(View.GONE);
                  holder.spin_time.setVisibility(View.GONE);
                  holder.spinnerView.setVisibility(View.GONE);
-                 holder.btn_video_patient.setVisibility(View.GONE);
+
+               holder.btn_video_patient.setVisibility(View.GONE);
              }
             else
             {
                 holder.btn_video_patient.setVisibility(View.GONE);
-                holder.btn_reject.setVisibility(View.GONE);
-                holder.btn_accept.setVisibility(View.GONE);
+                // holder.btn_reject.setVisibility(View.GONE);
+                //holder.btn_accept.setVisibility(View.GONE);
                 holder.btn_video_patient.setVisibility(View.GONE);
                 holder.btn_video.setVisibility(View.GONE);
 
+
             }
         }
-        else {
+        else
+        {
             holder.doctor.setText(""+appointments.get(position).getDoctorname());
             if(appointments.get(position).getDoctorapprovalstatus().equals("Accepted"))
             {
-
                 holder.btn_reject.setVisibility(View.GONE);
                 holder.btn_accept.setVisibility(View.GONE);
                 holder.spin_time.setVisibility(View.GONE);
                 holder.spinnerView.setVisibility(View.GONE);
-              //  holder.btn_video.setVisibility(View.GONE);
+              //holder.btn_video.setVisibility(View.GONE);
                 holder.btn_video_patient.setVisibility(View.GONE);
+
 
             }
             else if(appointments.get(position).getDoctorapprovalstatus().equals("Rejected"))
@@ -131,7 +137,7 @@ public class AdapterPatientAppointments extends RecyclerView.Adapter <AdapterPat
             }
         }
 
-holder.btn_accept.setOnClickListener(new View.OnClickListener() {
+    holder.btn_accept.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
         String timeslot=holder.spin_time.getSelectedItem().toString();
@@ -156,7 +162,7 @@ holder.btn_accept.setOnClickListener(new View.OnClickListener() {
             }
         });
     }
-});
+   });
 
         holder.btn_reject.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -187,19 +193,25 @@ holder.btn_accept.setOnClickListener(new View.OnClickListener() {
         holder.btn_video.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-             //   String username = patientname;
+           //  String username = patientname;
 
-                String username= appointments.get(position).getDoctorname();
-                if (userID.isEmpty())
-                {
-                    return;
-                }
+//                String username= appointments.get(position).getDoctorname();
+//              Toast.makeText(context, patientuserID, Toast.LENGTH_SHORT).show();
 
 
-                startService(userID);
+                String patient = "patient";
+                String doctor = "doctor";
+
+
+//                if (patientuserID.isEmpty())
+//                {
+//                    return;
+//                }
+
+                startService(patient);
                 Intent intent = new Intent(context.getApplicationContext(), VideoCallActivity.class);
-                intent.putExtra("userID",userID);
-                intent.putExtra("UserName",username );
+                intent.putExtra("userID",patient);
+                intent.putExtra("UserName",doctor );
                 context.startActivity(intent);
             }
         });
@@ -207,20 +219,28 @@ holder.btn_accept.setOnClickListener(new View.OnClickListener() {
         holder.btn_video_patient.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               String username= holder.doctor.getText().toString();
-                Toast.makeText(context, username, Toast.LENGTH_SHORT).show();
-
-                if (userID.isEmpty())
-                {
-                    return;
-                }
+//               String username= appointments.get(position).getDoctorname();
+//            Toast.makeText(context, username, Toast.LENGTH_SHORT).show();
+//                String UserID= appointments.get(position).getPatientname();
 
 
-                startService(userID);
+                String patient = "patient";
+                String doctor = "doctor";
+
+
+
+
+//                if (UserID.isEmpty())
+//                {
+//                    return;
+//                }
+                startService(doctor);
                 Intent intent = new Intent(context.getApplicationContext(), VideoCallActivity.class);
-                intent.putExtra("userID",userID);
-                intent.putExtra("UserName",username );
+                intent.putExtra("userID",doctor);
+                intent.putExtra("UserName",patient );
                 context.startActivity(intent);
+
+//
             }
         });
 

@@ -27,6 +27,7 @@ public class Constants {
 
 
 
+    public static final String KEY_PATIENT_NAME = "'patientname'";
 
     public static final String KEY_DOCTOR_NAME = "doctorname";
 

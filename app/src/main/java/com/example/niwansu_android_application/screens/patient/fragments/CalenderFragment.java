@@ -71,7 +71,7 @@ public class CalenderFragment extends Fragment {
         txtSeeAll = view.findViewById(R.id.txtseeAll);
         recyclerView.setHasFixedSize(true);
         calendarView = view.findViewById(R.id.calender);
-        fetchNotification();
+        fetchCalender();
 
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
@@ -80,7 +80,7 @@ public class CalenderFragment extends Fragment {
                 String date = String.format("%04d/%02d/%02d", year, month + 1, dayOfMonth);
 
 
-                fetchNotificationondate(date);
+                fetchCalenderondate(date);
             }
         });
 
@@ -88,7 +88,7 @@ public class CalenderFragment extends Fragment {
             @Override
             public void onClick(View view) {
                // txtSeeAll.setBackground(Drawa);
-                fetchNotification();
+                fetchCalender();
             }
         });
         txtAccepted.setOnClickListener(new View.OnClickListener() {
@@ -127,7 +127,7 @@ public class CalenderFragment extends Fragment {
 //    }
 
 
-    public void fetchNotification(){
+    public void fetchCalender(){
         sharedPreferences =this.getActivity().getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
         String patientemail = sharedPreferences.getString(KEY_EMAIL,null);
 
@@ -147,13 +147,14 @@ public class CalenderFragment extends Fragment {
             @Override
             public void onFailure(Call<List<AppointmentsList>> call, Throwable t)
             {
-                Toast.makeText(getContext(), "Error\n"+t.toString(), Toast.LENGTH_LONG).show();
+                Toast.
+                        makeText(getContext(), "Error\n"+t.toString(), Toast.LENGTH_LONG).show();
             }
         });
     }
 
 
-    public void fetchNotificationondate(String date){
+    public void fetchCalenderondate(String date){
         sharedPreferences =this.getActivity().getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
         String patientemail = sharedPreferences.getString(KEY_EMAIL,null);
         apiInterface = NetworkClient.getClient().create(NetworkService.class);

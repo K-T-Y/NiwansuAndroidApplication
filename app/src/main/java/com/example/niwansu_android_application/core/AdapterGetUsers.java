@@ -62,11 +62,10 @@ public class AdapterGetUsers extends RecyclerView.Adapter <AdapterGetUsers.MyVie
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         holder.doctorName.setText(""+doctorlist.get(position).getName()+" "+doctorlist.get(position).getLastname());
-
         holder.Occupation.setText(""+doctorlist.get(position).getOccupation());
         holder.EmailPeer.setText(""+doctorlist.get(position).getEmail());
-       String PeerEmail = doctorlist.get(position).getEmail();
-       String PeerUserName = doctorlist.get(position).getName();
+          String PeerEmail = doctorlist.get(position).getEmail();
+        String PeerUserName = doctorlist.get(position).getName();
 
 
         String base64 =  doctorlist.get(position).getProfilepicture();
@@ -121,6 +120,7 @@ public class AdapterGetUsers extends RecyclerView.Adapter <AdapterGetUsers.MyVie
     }
 
     public void buttonClick(String peerEmail, String peerUserName) {
+        Toast.makeText(context, "bla blaaaa", Toast.LENGTH_SHORT).show();
         sharedPreferences =this.context.getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
         String userId = sharedPreferences.getString(KEY_EMAIL, null);
         String userName = KEY_FIRST_NAME ;

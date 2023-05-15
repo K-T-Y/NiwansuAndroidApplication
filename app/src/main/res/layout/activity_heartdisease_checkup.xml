@@ -16,7 +16,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="349dp"
         android:outlineSpotShadowColor="@color/white"
-        android:padding="5dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -64,12 +64,12 @@
 
 
     <RadioGroup
-        android:id="@+id/choices_layout"
+        android:id="@+id/radioGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/question"
-        android:layout_centerInParent="true"
 
+        android:layout_centerInParent="true"
         android:layout_marginHorizontal="40dp"
         android:gravity="center"
         android:orientation="vertical">
@@ -139,7 +139,8 @@
         android:id="@+id/btnTakeToDoctor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/choices_layout"
+        android:layout_alignParentBottom="true"
+        android:layout_marginVertical="50dp"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="7dp"
