@@ -3,10 +3,22 @@ package com.example.niwansu_android_application.screens.doctor.activities;
 import static com.example.niwansu_android_application.core.Constants.KEY_FIRST_NAME;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
+import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.PopupWindow;
+import android.widget.TextView;
 
 import com.example.niwansu_android_application.R;
 import com.example.niwansu_android_application.core.Constants;
@@ -27,12 +39,15 @@ public class DoctorMainActivity extends AppCompatActivity {
 
     ProfileFragment profileActivity = new ProfileFragment();
 
+    FrameLayout layout;
+
     public static DoctorMainActivity sInstance;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_main);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        layout = findViewById(R.id.container);
         sInstance = this;
         long appId =76477047 ;    // The AppID you get from ZEGOCLOUD Admin Console.
         String appSign ="b2fe26ab62fcd26ede05c1635ed448ad21b679a0a3249401812951ff06ba1dd2" ;    // The App Sign you get from ZEGOCLOUD Admin Console.
@@ -60,7 +75,7 @@ public class DoctorMainActivity extends AppCompatActivity {
 
                     case R.id.chat:
                       //  buttonClick();
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, doctorChatFragment).commit();
+                         getSupportFragmentManager().beginTransaction().replace(R.id.container, doctorChatFragment).commit();
 
 
                         return;
@@ -109,4 +124,11 @@ public class DoctorMainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.container,doctorChatFragment).commit();
 
     }
+
+
+
+
+
+
+
 }

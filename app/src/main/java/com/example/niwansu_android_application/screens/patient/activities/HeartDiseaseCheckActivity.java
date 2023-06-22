@@ -4,6 +4,7 @@ import static com.example.niwansu_android_application.core.Constants.PREFERENCE_
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -195,13 +196,19 @@ public class HeartDiseaseCheckActivity extends AppCompatActivity implements View
     void finishQuiz() {
         if (score < 10) {
             questionTextView.setTextSize(16);
+            questionTextView.setTextColor(Color.parseColor("#ba160c"));
+
             questionTextView.setText("Your Score is " + score + " and you don't have to worry about having Heart Disease");
         } else if (score <= 20) {
             questionTextView.setTextSize(16);
+            questionTextView.setTextColor(Color.parseColor("#ba160c"));
+
             questionTextView.setText("Your Score is " + score + " You have a slight chance of having Heart disease. \n We have specialist who are excellent in this area.\n make sure to take a look.");
         } else if (score <= 30) {
             questionTextView.setTextSize(16);
             taketodoctor.setVisibility(View.VISIBLE);
+            questionTextView.setTextColor(Color.parseColor("#ba160c"));
+
             questionTextView.setText("Your Score is " + score + " You have a over 75% chance of having Heart disease.\n Make sure to channel one of our doctors as soon as possible\n\n Please click button below and we will take you to specialists who are available now for you to channel");
         }
 

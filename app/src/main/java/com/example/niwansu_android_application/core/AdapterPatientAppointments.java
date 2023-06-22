@@ -7,10 +7,14 @@ import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.PopupWindow;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +26,7 @@ import com.example.niwansu_android_application.R;
 import com.example.niwansu_android_application.models.changeStatusModel;
 import com.example.niwansu_android_application.screens.doctor.activities.DoctorMainActivity;
 import com.example.niwansu_android_application.screens.doctor.activities.VideoCallActivity;
+import com.example.niwansu_android_application.screens.patient.activities.MainActivity;
 import com.zegocloud.uikit.prebuilt.call.config.ZegoNotificationConfig;
 import com.zegocloud.uikit.prebuilt.call.invite.ZegoUIKitPrebuiltCallInvitationConfig;
 import com.zegocloud.uikit.prebuilt.call.invite.ZegoUIKitPrebuiltCallInvitationService;
@@ -143,11 +148,12 @@ public class AdapterPatientAppointments extends RecyclerView.Adapter <AdapterPat
         String timeslot=holder.spin_time.getSelectedItem().toString();
         NetworkService apiInterface;
         apiInterface = NetworkClient.getClient().create(NetworkService.class);
-        Call<changeStatusModel> call = apiInterface.changeStatus(appointments.get(position).getId(),"Accepted",timeslot);
-        call.enqueue(new Callback<changeStatusModel>() {
+        Call<ResponseModel> call = apiInterface.changeStatus(appointments.get(position).getId(),"Accepted",timeslot);
+        call.enqueue(new Callback<ResponseModel>() {
             @Override
-            public void onResponse(Call<changeStatusModel> call, Response<changeStatusModel> response) {
-                if(response.body().getStatus().equals("ok"))
+            public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+                ResponseModel responseBody = response.body();
+                if(responseBody.getSuccess().equals("1"))
                 {
                     Toast.makeText(context.getApplicationContext(),"Successfully Accepted",Toast.LENGTH_LONG).show();
                     Intent intent=new Intent(context.getApplicationContext(), DoctorMainActivity.class);
@@ -157,7 +163,7 @@ public class AdapterPatientAppointments extends RecyclerView.Adapter <AdapterPat
             }
 
             @Override
-            public void onFailure(Call<changeStatusModel> call, Throwable t) {
+            public void onFailure(Call<ResponseModel> call, Throwable t) {
                 Toast.makeText(context.getApplicationContext(),"Error While Connecting",Toast.LENGTH_LONG).show();
             }
         });
@@ -169,11 +175,12 @@ public class AdapterPatientAppointments extends RecyclerView.Adapter <AdapterPat
             public void onClick(View view) {
                 NetworkService apiInterface;
                 apiInterface = NetworkClient.getClient().create(NetworkService.class);
-                Call<changeStatusModel> call = apiInterface.changeStatus(appointments.get(position).getId(),"Rejected","");
-                call.enqueue(new Callback<changeStatusModel>() {
+                Call<ResponseModel> call = apiInterface.changeStatus(appointments.get(position).getId(),"Rejected","");
+                call.enqueue(new Callback<ResponseModel>() {
                     @Override
-                    public void onResponse(Call<changeStatusModel> call, Response<changeStatusModel> response) {
-                        if(response.body().getStatus().equals("ok"))
+                    public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+                        ResponseModel responseBody = response.body();
+                        if(responseBody.getSuccess().equals("1"))
                         {
                             Toast.makeText(context.getApplicationContext(),"Successfully Rejected",Toast.LENGTH_LONG).show();
                             Intent intent=new Intent(context.getApplicationContext(), DoctorMainActivity.class);
@@ -183,7 +190,7 @@ public class AdapterPatientAppointments extends RecyclerView.Adapter <AdapterPat
                     }
 
                     @Override
-                    public void onFailure(Call<changeStatusModel> call, Throwable t) {
+                    public void onFailure(Call<ResponseModel> call, Throwable t) {
                         Toast.makeText(context.getApplicationContext(),"Error While Connecting",Toast.LENGTH_LONG).show();
                     }
                 });
@@ -269,7 +276,6 @@ public class AdapterPatientAppointments extends RecyclerView.Adapter <AdapterPat
         notificationConfig.channelName = "CallInvitation";
         ZegoUIKitPrebuiltCallInvitationService.init((Application) context.getApplicationContext(), appID, appSign, userID, userName,callInvitationConfig);
     }
-
 
 
 }

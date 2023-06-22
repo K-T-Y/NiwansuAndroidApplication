@@ -209,6 +209,8 @@ public class BookDoctorActivity extends AppCompatActivity {
         progressDialog.setMessage("Getting doctor schedule ready...");
         progressDialog.setCancelable(false);
         progressDialog.show();
+
+        System.out.println(doctorname +" "+ bookeddate);
         NetworkService networkService = NetworkClient.getClient().create(NetworkService.class);
         Call<LoginResponseModel> doctorcheck = networkService.doctorcheck(doctorname, bookeddate);
         doctorcheck.enqueue(new Callback<LoginResponseModel>() {

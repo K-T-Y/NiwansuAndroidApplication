@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="#AA000000"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/popup_bg_premium_feauture"
+        android:elevation="20dp"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:paddingTop="5dp"
+
+
+            >
+
+<!--            <ImageView-->
+<!--                android:layout_width="32dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_gravity="left"-->
+<!--                android:foregroundGravity="center"-->
+<!--                android:src="@drawable/icon_crown" />-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_gravity="left"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:text="PREMIUM FEATURE"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/iconclose"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_gravity="right"
+                android:foregroundGravity="right"
+                android:src="@drawable/icon_close" />
+
+        </GridLayout>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="left"
+            android:text="CARD NUMBER"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="left"
+            android:text="CVV"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="left"
+            android:text="EXPIRY DATE"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+        <Switch
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save card details"
+            android:gravity="left"
+            android:layout_marginTop="25dp"
+            />
+
+
+        <TextView
+            android:id="@+id/Gotit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/background_time_select_round_button"
+            android:paddingLeft="15dp"
+            android:paddingTop="5dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="5dp"
+            android:text="PAY NOW"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

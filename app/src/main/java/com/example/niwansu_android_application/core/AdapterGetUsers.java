@@ -120,7 +120,7 @@ public class AdapterGetUsers extends RecyclerView.Adapter <AdapterGetUsers.MyVie
     }
 
     public void buttonClick(String peerEmail, String peerUserName) {
-        Toast.makeText(context, "bla blaaaa", Toast.LENGTH_SHORT).show();
+
         sharedPreferences =this.context.getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
         String userId = sharedPreferences.getString(KEY_EMAIL, null);
         String userName = KEY_FIRST_NAME ;

@@ -160,6 +160,16 @@
                 android:inputType="textPassword" />
 
 
+            <Button
+                android:id="@+id/btn_remove_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_password"
+                android:layout_marginHorizontal="40dp"
+
+                android:text="Remove Account"
+                />
+
 
         </RelativeLayout>
     </RelativeLayout>

@@ -3,12 +3,22 @@ package com.example.niwansu_android_application.screens.patient.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.example.niwansu_android_application.R;
+import com.example.niwansu_android_application.screens.doctor.activities.DoctorMainActivity;
 import com.example.niwansu_android_application.screens.doctor.activities.ProfileFragment;
 import com.example.niwansu_android_application.screens.doctor.fragments.FeedFragment;
 import com.example.niwansu_android_application.screens.patient.fragments.CalenderFragment;
@@ -44,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
     ProfileFragment profileActivity = new ProfileFragment();
 
+    FrameLayout layout;
     public static MainActivity sInstance;
 
     @Override
@@ -51,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
-
+        layout = findViewById(R.id.container);
 //        sInstance = this;
 //        long appId =1237621987 ;    // The AppID you get from ZEGOCLOUD Admin Console.
 //        String appSign ="b40727d97be6263d11bf3e6b1847022a036a8d9b0c3cf66a766072668cedc876" ;    // The App Sign you get from ZEGOCLOUD Admin Console.
@@ -84,7 +95,9 @@ public class MainActivity extends AppCompatActivity {
                         return;
 
                     case R.id.chat:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, chatFragment).commit();
+                       // getSupportFragmentManager().beginTransaction().replace(R.id.container, chatFragment).commit();
+
+                        CreatepopUpwindow();
                         return;
 
                     case R.id.map:
@@ -101,6 +114,257 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+    }
+
+    private void CreatepopUpwindow() {
+
+        LayoutInflater inflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View popUpView = inflater.inflate(R.layout.premium_feature_popup, null);
+
+
+        int width = ViewGroup.LayoutParams.MATCH_PARENT;
+        int height = ViewGroup.LayoutParams.MATCH_PARENT;
+
+        boolean focusable = true;
+        PopupWindow popupWindow = new PopupWindow(popUpView, width, height, focusable);
+
+
+        layout.post(new Runnable() {
+            @Override
+            public void run() {
+
+
+                popupWindow.showAtLocation(layout, Gravity.BOTTOM, 0, 0);
+
+
+            }
+        });
+
+
+        TextView Gotit;
+        ImageView iconclose;
+
+        Gotit = popUpView.findViewById(R.id.Gotit);
+        iconclose = popUpView.findViewById(R.id.iconclose);
+
+        Gotit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                popupWindow.dismiss();
+                PremiumPaymentPopupWindow();
+
+
+            }
+        });
+        iconclose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                popupWindow.dismiss();
+
+
+            }
+        });
+//         and if you want to close popup when touch Screen
+        popUpView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+
+                popupWindow.dismiss();
+                return true;
+
+            }
+
+        });
+
+//        popUpView1.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                fadePopup.dismiss();
+//
+//                popupWindow.dismiss();
+//                return true;
+//
+//            }
+//
+//        });
+
+
+
+
+    }
+
+    private void PremiumPaymentPopupWindow() {
+        LayoutInflater inflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View popUpView = inflater.inflate(R.layout.premium_feature_paymentgate_popup, null);
+
+        int width = ViewGroup.LayoutParams.MATCH_PARENT;
+        int height = ViewGroup.LayoutParams.MATCH_PARENT;
+
+
+        boolean focusable = true;
+
+        PopupWindow popupWindow = new PopupWindow(popUpView, width, height, focusable);
+        layout.post(new Runnable() {
+            @Override
+            public void run() {
+
+                popupWindow.showAtLocation(layout, Gravity.BOTTOM, 0, 0);
+
+
+            }
+        });
+
+        TextView Gotit;
+        ImageView iconclose;
+
+        Gotit = popUpView.findViewById(R.id.Gotit);
+        iconclose = popUpView.findViewById(R.id.iconClosepayementGate);
+
+        Gotit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                popupWindow.dismiss();
+                PremiumPaymentCardDetails();
+
+
+            }
+        });
+        iconclose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                popupWindow.dismiss();
+
+            }
+        });
+        popUpView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                popupWindow.dismiss();
+                return true;
+            }
+        });
+
+    }
+
+    private void PremiumPaymentCardDetails() {
+        LayoutInflater inflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View popUpView = inflater.inflate(R.layout.premium_payment_details_enter_popup, null);
+
+
+        int width = ViewGroup.LayoutParams.MATCH_PARENT;
+        int height = ViewGroup.LayoutParams.MATCH_PARENT;
+
+        boolean focusable = true;
+
+        PopupWindow popupWindow = new PopupWindow(popUpView, width, height, focusable);
+        layout.post(new Runnable() {
+            @Override
+            public void run() {
+
+                popupWindow.showAtLocation(layout, Gravity.BOTTOM, 0, 0);
+
+
+            }
+        });
+
+        TextView Gotit;
+        ImageView iconclose;
+
+        Gotit = popUpView.findViewById(R.id.Gotit);
+        iconclose = popUpView.findViewById(R.id.iconclose);
+
+        Gotit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                popupWindow.dismiss();
+                PremiumPaymentDone();
+
+
+            }
+        });
+        iconclose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                popupWindow.dismiss();
+
+            }
+        });
+        popUpView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                popupWindow.dismiss();
+                return true;
+            }
+        });
+
+    }
+
+
+    private void PremiumPaymentDone() {
+        LayoutInflater inflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View popUpView = inflater.inflate(R.layout.premium_payment_approved_popup, null);
+
+
+        int width = ViewGroup.LayoutParams.MATCH_PARENT;
+        int height = ViewGroup.LayoutParams.MATCH_PARENT;
+
+        boolean focusable = true;
+        PopupWindow popupWindow = new PopupWindow(popUpView, width, height, focusable);
+        layout.post(new Runnable() {
+            @Override
+            public void run() {
+
+                popupWindow.showAtLocation(layout, Gravity.BOTTOM, 0, 0);
+
+
+            }
+        });
+        TextView Gotit;
+        ImageView iconclose;
+        Gotit = popUpView.findViewById(R.id.Gotit);
+        iconclose = popUpView.findViewById(R.id.iconclose);
+
+        Gotit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                popupWindow.dismiss();
+                //      Intent i = new Intent(getActivity(), ForumActivity.class);
+
+
+                getSupportFragmentManager().beginTransaction().replace(R.id.container, chatFragment).commit();
+
+                // startActivity(i);
+
+            }
+        });
+        iconclose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                popupWindow.dismiss();
+
+            }
+        });
+        popUpView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                popupWindow.dismiss();
+                return true;
+            }
+        });
 
     }
 

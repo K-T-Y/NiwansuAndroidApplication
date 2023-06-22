@@ -33,9 +33,6 @@ public interface NetworkService {
     Call<ResponseModel> bookDoctor(@FieldMap HashMap<String, String> params);
 
 
-
-
-
     @GET("fetchappointmentdetails.php")
     Call<List<AppointmentsList>> getAppointments(
 
@@ -108,12 +105,16 @@ public interface NetworkService {
 
     @FormUrlEncoded
     @POST("updateStatus.php")
-    Call<changeStatusModel> changeStatus(@Field("req_id") int req_id, @Field("status") String status,@Field("time") String time);
+    Call<ResponseModel> changeStatus(@Field("req_id") int req_id, @Field("status") String status,@Field("time") String time);
 
 
     @FormUrlEncoded
     @POST("updateProfile.php")
-    Call<changeStatusModel> updateProfile(@Field("fname") String fname, @Field("lname") String lname,@Field("email") String email,@Field("contact") String contact,@Field("password") String password);
+    Call<ResponseModel> updateProfile(@Field("fname") String fname, @Field("lname") String lname,@Field("email") String email,@Field("contact") String contact,@Field("password") String password);
+
+    @FormUrlEncoded
+    @POST("deleteAccount.php")
+    Call<ResponseModel> deleteProfile(@Field("email") String email);
 
 
 

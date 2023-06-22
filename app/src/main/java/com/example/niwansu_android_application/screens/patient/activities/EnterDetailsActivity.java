@@ -322,7 +322,7 @@ public class EnterDetailsActivity extends AppCompatActivity {
                 if (responseBody != null) {
                     if (responseBody.getSuccess().equals("1")) {
                         Toast.makeText(EnterDetailsActivity.this, responseBody.getMessage(), Toast.LENGTH_SHORT).show();
-                       Toast.makeText(EnterDetailsActivity.this, "okayyyyyy", Toast.LENGTH_SHORT).show();
+                    //   Toast.makeText(EnterDetailsActivity.this, "okayyyyyy", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(EnterDetailsActivity.this, LoginActivity.class);
                         intent.putExtra("email",etEmail.getText().toString());
                         intent.putExtra("password",etPasswordOne.getText().toString());

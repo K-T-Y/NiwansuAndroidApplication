@@ -76,7 +76,7 @@ public class ChatFragment extends Fragment {
                 adapterDoctorList = new AdapterGetUsers(users, getContext());
                 recyclerView.setAdapter(adapterDoctorList);
                 adapterDoctorList.notifyDataSetChanged();
-                //Toast.makeText(getContext(), "asdas" , Toast.LENGTH_SHORT).show();
+
             }
 
             @Override

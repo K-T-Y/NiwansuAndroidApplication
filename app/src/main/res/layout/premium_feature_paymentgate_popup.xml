@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="#AA000000"
+
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/popup_bg_premium_feauture"
+        android:elevation="20dp"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:paddingTop="5dp"
+
+
+            >
+
+<!--            <ImageView-->
+<!--                android:layout_width="32dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_gravity="left"-->
+<!--                android:foregroundGravity="center"-->
+<!--                android:src="@drawable/icon_crown" />-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_gravity="left"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:text="PREMIUM FEATURE"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/iconClosepayementGate"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_gravity="right"
+                android:foregroundGravity="right"
+                android:src="@drawable/icon_close" />
+
+        </GridLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="left"
+            android:text="Select payment method"
+            android:textSize="13sp"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="left"
+            android:text="Credit \ Debit cards"
+            android:textSize="10sp"
+            android:textColor="@color/black"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="10dp"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:clickable="true"
+                android:src="@drawable/icon_visa"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:clickable="true"
+                android:src="@drawable/icon_mastercard"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:clickable="true"
+                android:src="@drawable/icon_paypal"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:clickable="true"
+                android:src="@drawable/icon_amazon"/>
+
+
+
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mobile wallet"
+            android:textSize="10sp"
+            android:textColor="@color/black"
+/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="49dp"
+                android:layout_height="30dp"
+                android:clickable="true"
+                android:src="@drawable/icon_frimi" />
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="30dp"
+                android:clickable="true"
+                android:src="@drawable/icon_ez_cash" />
+
+            <ImageView
+                android:layout_width="47dp"
+                android:layout_height="30dp"
+                android:clickable="true"
+                android:src="@drawable/icon_dialog" />
+
+
+
+
+
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Internet Banking"
+            android:textSize="10sp"
+
+            android:textColor="@color/black"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="49dp"
+                android:layout_height="30dp"
+                android:clickable="true"
+                android:src="@drawable/icon_sampath" />
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="30dp"
+                android:clickable="true"
+                android:src="@drawable/icon_commercial" />
+
+
+
+
+
+
+
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:hint="CARD HOLDERS NAME"
+            android:textSize="12sp"
+
+
+            />
+
+            <TextView
+                android:id="@+id/Gotit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:paddingLeft="35dp"
+                android:layout_marginTop="35dp"
+                android:paddingTop="5dp"
+                android:paddingRight="35dp"
+                android:paddingBottom="5dp"
+                android:layout_gravity="center"
+                android:text="NEXT"
+                android:background="@drawable/background_time_select_round_button"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="normal" />
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/bac_dim_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#C0000000"
+        android:visibility="gone" >
+    </RelativeLayout>
+</RelativeLayout>
