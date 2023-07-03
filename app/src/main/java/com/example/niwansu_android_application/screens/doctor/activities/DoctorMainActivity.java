@@ -89,6 +89,7 @@ public class DoctorMainActivity extends AppCompatActivity {
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, appointmentsFragment).commit();
                         return;
 
+
                 }
                 return;
             }

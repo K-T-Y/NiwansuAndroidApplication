@@ -39,13 +39,14 @@ import retrofit2.Response;
 public class HomeFragment extends Fragment {
 
 View view;
-TextView txt_name;
+TextView txt_name,bbb;
 CircleImageView pro_pic;
 RecyclerView storyRV;
     ArrayList<HorizontalUserModel> storyList;
     SharedPreferences sharedPreferences;
 
     ProfileFragment profileFragment = new ProfileFragment();
+    patientListFragment patientListFragment = new patientListFragment();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -54,6 +55,11 @@ RecyclerView storyRV;
         txt_name=view.findViewById( R.id.txt_name);
         pro_pic=view.findViewById(R.id.pro_pic);
         storyRV=view.findViewById(R.id.storyRV);
+        bbb = view.findViewById(R.id.aaa);
+
+
+
+
         sharedPreferences =this.getActivity().getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
         String name = "Dr."+(sharedPreferences.getString(Constants.KEY_FIRST_NAME,null))+" "+(sharedPreferences.getString(Constants.KEY_LAST_NAME,null));
         txt_name.setText(name);
@@ -77,6 +83,14 @@ RecyclerView storyRV;
             }
         });
 
+        bbb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, patientListFragment).commit();
+                return;
+            }
+        });
 
         return view;
     }

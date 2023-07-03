@@ -22,7 +22,10 @@
         android:icon="@drawable/icon_my_menu"
         android:title="MENU"/>
 
-
+<!--    <item-->
+<!--        android:id="@+id/patients"-->
+<!--        android:icon="@drawable/icon_my_menu"-->
+<!--        android:title="PATIENTS"/>-->
 
 
 </menu>

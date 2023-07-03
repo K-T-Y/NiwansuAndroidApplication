@@ -203,15 +203,15 @@ public class DiabetesCheckActivity extends AppCompatActivity implements View.OnC
         if (score < 10) {
             questionTextView.setTextSize(16);
             questionTextView.setTextColor(Color.parseColor("#ba160c"));
-            questionTextView.setText("Your Score is " + score + " and you don't have to worry about having Diabetes");
+            questionTextView.setText("You don't have to worry about having Diabetes");
         } else if (score <= 20) {
             questionTextView.setTextSize(16);
-            questionTextView.setText("Your Score is " + score + " You have a slight chance of having Diabetes.\n We have specialist who are excellent in this area.\n make sure to take a look.");
+            questionTextView.setText("You have a slight chance of having Diabetes.\n We have specialist who are excellent in this area.\n make sure to take a look.");
             questionTextView.setTextColor(Color.parseColor("#ba160c"));
 
         } else if (score <= 30) {
             questionTextView.setTextSize(16);
-            questionTextView.setText("Your Score is " + score + ".You have over 75% chance of having diabetes.\n Make sure to channel one of our doctors as soon as possible\n\n Please click button below and we will take you to specialists who are available now for you to channel");
+            questionTextView.setText("You have over 75% chance of having diabetes.\n Make sure to channel one of our doctors as soon as possible\n\n Please click button below and we will take you to specialists who are available now for you to channel");
             questionTextView.setTextColor(Color.parseColor("#ba160c"));
 
             taketodoctor.setVisibility(View.VISIBLE);
