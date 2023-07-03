@@ -72,8 +72,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         sInstance = this;
-        long appId =76477047 ;    // The AppID you get from ZEGOCLOUD Admin Console.
-        String appSign ="b2fe26ab62fcd26ede05c1635ed448ad21b679a0a3249401812951ff06ba1dd2" ;    // The App Sign you get from ZEGOCLOUD Admin Console.
+        long appId =1397873641 ;    // The AppID you get from ZEGOCLOUD Admin Console.
+        String appSign ="d1387f5230a568aa254042846ed8329c767580af34502b093a8068ea32a54c31" ;    // The App Sign you get from ZEGOCLOUD Admin Console.
         ZIMKit.initWith(getApplication(),appId,appSign);
         // Online notification for the initialization (use the following code if this is needed).
         ZIMKit.initNotifications();

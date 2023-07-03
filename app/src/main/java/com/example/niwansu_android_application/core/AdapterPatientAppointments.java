@@ -263,8 +263,8 @@ public class AdapterPatientAppointments extends RecyclerView.Adapter <AdapterPat
     void startService(String userID)
     {
         Application application = (Application) context.getApplicationContext(); // Android's application context
-        long appID = 74354130;   // yourAppID
-        String appSign ="35abdd92b089f965715a57126d71bf258d228c9e586abc432cc52853a34f1b0d";  // yourAppSign
+        long appID = 1300726179;   // yourAppID
+        String appSign ="fd7be667f0435ac87068ffc7f35089590d3f6b45f007a3214ca6ac2d446e7c34";  // yourAppSign
         // yourUserID, userID should only contain numbers, English characters, and '_'.
         String userName =userID;   // yourUserName
 
