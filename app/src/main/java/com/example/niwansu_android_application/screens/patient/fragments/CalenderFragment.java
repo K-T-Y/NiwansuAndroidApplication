@@ -78,7 +78,6 @@ public class CalenderFragment extends Fragment {
             public void onSelectedDayChange(@NonNull CalendarView calendarView, int year, int month, int dayOfMonth) {
 
                 String date = String.format("%04d/%02d/%02d", year, month + 1, dayOfMonth);
-                Toast.makeText(getContext(), "asdasd", Toast.LENGTH_SHORT).show();
 
                 fetchCalenderondate(date);
             }

@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginStart="0dp"
-            android:text="Message"
+            android:text="Patients"
             android:textColor="#4F7C7E"
             android:textSize="20sp"
             android:textStyle="bold">
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginTop="30dp"
-            android:text="Connect with your favourite doctor"
+            android:text="List of patients"
             android:textColor="#4C7375"
             android:textSize="14sp"
             android:textStyle="bold">

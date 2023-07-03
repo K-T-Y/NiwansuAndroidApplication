@@ -26,6 +26,7 @@ import com.example.niwansu_android_application.screens.doctor.fragments.Appointm
 import com.example.niwansu_android_application.screens.doctor.fragments.DoctorChatFragment;
 import com.example.niwansu_android_application.screens.doctor.fragments.FeedFragment;
 import com.example.niwansu_android_application.screens.doctor.fragments.HomeFragment;
+import com.example.niwansu_android_application.screens.doctor.fragments.patientListFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.zegocloud.zimkit.services.ZIMKit;
@@ -38,6 +39,7 @@ public class DoctorMainActivity extends AppCompatActivity {
     DoctorChatFragment doctorChatFragment=new DoctorChatFragment();
 
     ProfileFragment profileActivity = new ProfileFragment();
+    patientListFragment patientListFragment = new patientListFragment();
 
     FrameLayout layout;
 
@@ -68,9 +70,9 @@ public class DoctorMainActivity extends AppCompatActivity {
                         return;
 
 
-                    case R.id.socialmedia:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, feedFragment).commit();
-                        return;
+//                    case R.id.socialmedia:
+//                        getSupportFragmentManager().beginTransaction().replace(R.id.container, feedFragment).commit();
+//                        return;
 
 
                     case R.id.chat:
@@ -87,6 +89,9 @@ public class DoctorMainActivity extends AppCompatActivity {
 
                     case R.id.calender:
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, appointmentsFragment).commit();
+                        return;
+                    case R.id.patients:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container, patientListFragment).commit();
                         return;
 
 
